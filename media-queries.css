@@ -76,7 +76,7 @@
 }
 
 /* Schermi piccoli: massimo 765px -> 1 colonna */
-@media (max-width: 765px) {
+@media (max-width: 800px) {
     #col-1,
     #col-2,
     #col-3 {
