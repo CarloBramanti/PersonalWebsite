@@ -1,0 +1,136 @@
+/* Schermo grande -> 3 colonne */
+  @media (min-width: 1147px) {
+    .contacts-wrapper-small{
+        display: none;
+    }
+
+    .nav-bar{
+        display: none;
+    }
+
+    #nav-bar-3,
+    #footer-col1{
+        display: none;
+    }
+
+    .hor-line,
+    .phone-footer{
+      display: none;
+    }
+  }
+
+  /* Schermi medi: massimo 1000px -> 2 colonne */
+@media (max-width: 1146px) {
+  .column,
+  .column2 {
+      width: 50vw;
+  }
+
+  .nav-bar{
+    display: flex;
+    gap: 10px;
+  }
+
+  #LATEST-3col,
+  #OTHER-PROJECTS-3col,
+  #footer-col1{
+    display: none;
+  }
+
+  #LATEST-2col:hover{
+    cursor: pointer;
+    font-weight: 500;
+    width: 56px;
+  }
+
+  #OTHER-PROJECTS-2col:hover{
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  #col-3{
+    display: none;
+    width: 50vw;
+  }
+
+  .line-1 {
+  left: 50vw !important;
+  }
+  .line-2 {
+      display: none;
+  }
+
+  .line-3 {
+  right: 0;
+  display: block;
+  }
+
+  .hor-line,
+  .phone-footer{
+      display: none;
+    }
+
+  .contacts-wrapper-small{
+    display: none;
+  }
+}
+
+/* Schermi piccoli: massimo 765px -> 1 colonna */
+@media (max-width: 765px) {
+    #col-1,
+    #col-2,
+    #col-3 {
+        width: 100vw;
+        display: inline-block !important;
+    }
+
+    .line-1, .line-2,
+    .contacts-wrapper,
+    .footer{
+        display: none;
+    }
+
+    .hor-line{
+      display: block;
+    }
+
+    #Porfolio{
+        display: none;
+    }
+
+    .contacts-wrapper-small{
+    display: inline !important;
+    margin-bottom: 50px;
+    }
+
+  .nav-bar{
+    display: none;
+  }
+
+   #LATEST-3col,
+  #OTHER-PROJECTS-3col {
+    display: block;
+  }
+
+  .caption-wrapper{
+    height: 450px;
+  }
+
+  .caption{
+    margin-right: 20px;
+  }
+
+  .footer3{
+    display: none !important;
+  }
+
+  .phone-footer{
+    display: flex !important;
+  }
+
+  .column-title{
+    margin-top: 40px;
+  }
+
+
+}

@@ -1,0 +1,394 @@
+body{
+    margin: 0;
+    display: flex;
+    overflow-x: hidden;
+    cursor: default;
+    flex-wrap: wrap;
+}
+
+/*Columns and lines*/
+.column,
+.column2,
+.column3{
+    width: 33.333vw;
+    display: inline-block;
+}
+
+.column3{
+  user-select: none;
+}
+
+.line {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: red;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.line-1 {
+    left: 33.333vw;
+}
+
+.line-2 {
+    left: 66.666vw;
+}
+
+.line-3 {
+    right: 0;
+}
+
+/*Header elements*/
+.page-title{
+  font-family: 'Untitled';
+  font-weight: 500;
+  color: red;
+  height: 100px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.column-title{
+  font-family: "adobe-jenson-pro", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: red;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  height: 10px;
+  display: inline-block;
+}
+
+.nav-item{
+  display: inline-block;
+}
+
+.top-bar{
+  height: 140px;
+  position: relative;
+}
+
+.project-intro-bar {
+  display: flex;
+  flex-wrap: nowrap; /* NO wrap tra frecce e testo */
+  align-items: flex-end;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+}
+
+.project-intro-text {
+  font-family: 'Untitled';
+  color: red;
+  font-weight: 500;
+  line-height: 1.2;
+  flex: 1 1 auto;        /* il testo può andare a capo */
+  min-width: 0;          /* per permettere il wrapping */
+  white-space: normal;   /* wrap consentito */
+}
+
+.gallery-arrows {
+  display: flex;
+  flex-shrink: 0;        /* non si restringe */
+  margin-left: auto;     /* spinge a destra */
+  gap: 10px;
+  margin-left: 50px;
+}
+
+.Call-to-action{
+font-family: 'Untitled';
+color: red;
+font-weight: 500;
+line-height: 1.2;
+position: absolute;
+left: 20px;
+bottom: 20px;
+}
+
+/*Frames*/
+.project-frame{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-color: red;
+  border-width: 3px;
+  height: 300px;
+  border-right: none;
+  margin-top: -3px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.project-frame-B{
+  border-style: solid;
+  border-color: red;
+  border-width: 3px;
+  height: 300px;
+  width: 100%;
+  border-right: none;
+  margin-top: -3px;
+  object-fit: cover;
+}
+
+.project-image {
+max-height: 95%;
+max-width: 95%;
+object-fit: contain;
+display: block;
+margin: auto;
+}
+
+.image-loop {
+width: 100%;
+height: 100%;
+overflow: hidden;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+}
+
+.loop-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+/*COL 1 Elements*/
+.BIO{
+    font-family: "adobe-jenson-pro", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: red;
+    font-size: 20pt;
+    margin-right: 40px;
+    margin-left: 20px;
+    height: 280px;
+    padding-top: 20px;
+    line-height: 1.1;
+}
+
+.Alt-BIO{
+  font-family: 'Untitled';
+  font-size: 14pt;
+  font-weight: 500;
+  color: red;
+  margin-left: 20px;
+  padding-top: 20px;
+}
+
+.bio-wrapper {
+position: relative;
+height: 175px;
+}
+
+#funny-bio{
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+font-family: 'Untitled', sans-serif;
+font-weight: 500;
+font-size: 14pt;
+color: red;
+margin: 20px;
+margin-right: 200px;
+margin-top: 10px;
+transition: all 0.3s ease;
+}
+
+.Contact{
+  font-family: 'Untitled';
+  font-size: 12pt;
+  font-weight: 400;
+  color: red;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.footer {
+  position: fixed;
+  background-color: white;
+  padding-bottom: 20px;
+  padding-top: 5px;
+  bottom: 0px;
+  width: 33.333vw;
+}
+
+.footer3 {
+  padding-bottom: 20px;
+  background-color: white;
+  position: fixed;
+  padding-top: 5px;
+  bottom: 0px;
+  width: 33.333vw;
+  font-family: 'Untitled';
+  font-size: 12pt;
+  font-weight: 400;
+  color: red;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.contacts-wrapper-small {
+  background-color: white;
+  padding-bottom: 20px;
+  padding-top: 5px;
+  margin-bottom: 100px;
+  bottom: 0px;
+  width: 33.333vw;
+}
+
+/*COL 2 Elements*/
+#latest-frame img {
+  max-height: 95%;
+  max-width: 95%;
+  object-fit: contain;
+  transition: opacity 0.2s ease;
+  display: block;
+  margin: auto;
+}
+
+.CD-Blurb{
+  font-family: "adobe-jenson-pro", serif;
+  color: red;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16pt;
+  padding-top: 10px;
+  height: 360px;
+}
+
+/*COL 3 Elements*/
+.caption {
+  font-family: "adobe-jenson-pro", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16pt;
+  color: red;
+  padding: 20px;
+  padding-bottom: 50px;
+}
+
+.caption-wrapper{
+  height: 440px;
+}
+
+/*MISC*/
+::selection {
+background-color: black;
+color: white;
+text-shadow: none;
+}
+
+.hor-line{
+  height: 3px;
+  background-color: red;
+  position: relative;
+  bottom: 0;
+}
+
+.footer{
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.phone-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 95px;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  border-top: 3px;
+  border-style: solid;
+  border-color: red;
+  padding-bottom: 10px;
+}
+
+#trigger-really:hover {
+  font-style: italic;
+}
+
+#Link {
+color: red;
+cursor: pointer;
+}
+
+#Link:hover {
+font-weight: 200;
+}
+
+#Link:visited {
+color: red;
+}
+
+::-moz-selection {
+background-color: black;
+color: white;
+}
+
+::-webkit-selection {
+background: black;
+color: white;
+}
+
+#arrow-left:hover,
+#arrow-right:hover{
+  cursor: pointer;
+}
+
+/*Import Fonts*/
+@font-face {
+font-family:'Louize';
+src: url('Fonts/LouizeTrial-Regular.otf') format(opentype);
+font-weight: 400;
+font-style: normal;
+}
+@font-face {
+font-family: 'Louize';
+src: url('Fonts/LouizeTrial-Bold.otf') format(opentype);
+font-weight: 700;
+font-style: normal;
+}
+@font-face {
+font-family: 'Louize';
+src: url('Fonts/LouizeTrial-Italic.otf') format(opentype);
+font-weight: 400;
+font-style: italic;
+}
+@font-face {
+font-family: 'Untitled';
+src: url('Fonts/UntitledSans-Medium.otf') format(opentype);
+font-weight: 500;
+font-style: normal;
+}
+@font-face {
+font-family: 'Untitled';
+src: url('Fonts/UntitledSans-MediumItalic.otf') format(opentype);
+font-weight: 500;
+font-style: italic;
+}
+@font-face {
+font-family: 'Untitled';
+src: url('Fonts/UntitledSans-Regular.otf') format(opentype);
+font-weight: 400;
+font-style: normal;
+}
