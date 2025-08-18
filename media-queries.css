@@ -226,6 +226,7 @@
   .CD-Blurb {
     font-size: 14pt;
     line-height: 1.15;
+    -webkit-text-stroke: 0.25px;
   }
 
   .line-1,
