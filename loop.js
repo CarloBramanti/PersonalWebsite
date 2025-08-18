@@ -5,12 +5,12 @@ const funnyBio = document.getElementById('funny-bio');
 const textColors = ['red', 'blue'];
 
 const bioOptions = [
-  "He does messy drawings to make his brain shut down.",
+  //"He does messy drawings to make his brain shut down.",
   "He hates writing bios where he speaks in third person of himself.",
   "His 4 favorites on Letterboxd are: John Wick, John Wick 2, John Wick 3, and John Wick 4.",
   "He likes, among others, the following video games: Return of the Obra Dinn, Hollow Knight, Kentucky Route Zero, Pokémon Crystal, The Binding of Isaac, Disco Elysium.",
-  "He is the top of the West, Always cool, he is the best.",
-  "He is in this image.",
+  "He is the top of the West, always cool, he is the best <a style='color: var(--textColor)' href='https://www.youtube.com/watch?v=sFFLQ89bJRM&t=1s' target='_blank'>*whistling*</a>",
+  "He is in this <a style='color: var(--textColor)' href='images/Disco Elysium.png' target='_blank'>image</a>.",
 ];
 
 const spinSpeed = 35; // velocità in millisecondi per ogni frame
@@ -24,13 +24,13 @@ function getRandomIntInclusive(min, max) {
 
 trigger.addEventListener('click', () => {
   let interval = setInterval(() => {
-    funnyBio.textContent = bioOptions[Math.floor(Math.random() * bioOptions.length)];
+    funnyBio.innerHTML = bioOptions[Math.floor(Math.random() * bioOptions.length)];
   }, spinSpeed);
 
   setTimeout(() => {
     clearInterval(interval);
     // Fissa la bio finale casuale
-    funnyBio.textContent = bioOptions[Math.floor(Math.random() * bioOptions.length)];
+    funnyBio.innerHTML = bioOptions[Math.floor(Math.random() * bioOptions.length)];
   }, spinDuration);
 });
 
@@ -110,6 +110,20 @@ const projects = [
     caption: "<em>The Bigger Picture</em> is an exploratory diagrammatic installation I designed as a graduation project at DAE. The installation consists of a room-sized flowchart drawn directly onto the exhibition surfaces with invisible ink so that it can be seen only a small bit at a time by using a UV-flashlight. Through the game/investigation experience made of crossroads, choices and secret easter eggs, I try to unpack all the information of my research about the formal and and theoretical similarities between design and conspiracy theories. <em>The Bigger Picture</em> tries to open a discussion about the perception of legitimacy of information, and about the role in society of design and conspiracy theories: two closed esoteric systems of knowledge in constant need to expand the scope of their research.",
     colorImages: ["1.jpg", "2.jpg", "3.jpg"]
   },
+
+  {
+    name: "Project 4",
+    folder: "project4",
+    caption: "In 2023 I designed the visual identity for <em>Backward Steps</em>, an independent musical project of producer and beat-maker Ha-Maze. Together with the artist we defined the core aspects of the project that needed to be conveyed and we imagined how to translate such sensations and ideas through visual metaphors. The lo-fi, broken, and glitchy urban sounds were represented by juxtaposing photographs and videos with a residual, dreamlike appearance with animated ASCII art. The ASCII typographic visuals were obtained using a P5js script (based on the work of Andreas Gysin) that maps and converts the brightness of the pixels in a video into a list of glyphs.",
+    colorImages: ["1.jpg", "2.jpg", "3.jpg"]
+  },
+
+  {
+    name: "Project 5",
+    folder: "project5",
+    caption: "<em>Representation Wars</em> is an infographic designed with the purpose of deconstructing the rhetorical function of nationalistic war depictions inside the Rijksmuseum in Amsterdam. Prompted by an assignment received during my MA to design an hacking intervention within the context of the Rijksmuseum that could counter its role of creator of national identity, I examined room 2.1.5 of the museum, where some of the most important depiction of dutch naval battles are exhibited. I then selected The Battle of Leghorn by Reiner Nooms as a case study and designed an essential infographic that could, by displaying some selected historical information, expose the limits of this painting as an historical document and explain the way it serves as tool of national glorification through a series of representational stratagems.",
+    colorImages: ["1.jpg", "2.jpg", "3.jpg"]
+  },
   // aggiungi altri progetti
 ];
 
@@ -123,11 +137,6 @@ let currentIndex = 0;
 let loopInterval;
 let isHovering = false;
 let colorIndex = 0;
-
-function showPreview(index) {
-  const project = projects[index];
-  loopContainer.innerHTML = `<img src="images/${project.folder}/preview-bw.jpg" class="loop-image" />`;
-}
 
 function startLoop() {
   loopInterval = setInterval(() => {
@@ -156,7 +165,7 @@ loopContainer.addEventListener("mouseenter", () => {
 });
 
 loopContainer.addEventListener("mouseleave", () => {
-  console.log("Esco dall’hover"); // DEBUG
+  console.log("Esco dall’hover");
 
   isHovering = false;
   captionEl.style.display = "none";
@@ -173,13 +182,11 @@ loopContainer.addEventListener("click", () => {
 });
 
 leftArrow.addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + projects.length) % projects.length;
-  if (!isHovering) showPreview(currentIndex);
+  if (!isHovering) goToIndex(currentIndex - 1);
 });
 
 rightArrow.addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % projects.length;
-  if (!isHovering) showPreview(currentIndex);
+  if (!isHovering) goToIndex(currentIndex + 1);
 });
 
 //Pallini di navigazione progetti
@@ -191,14 +198,19 @@ function createDots() {
     if (i === currentIndex) dot.classList.add("active");
 
     dot.addEventListener("click", () => {
-      currentIndex = i;
-      showPreview(currentIndex);
-      updateDots();
+      if (!isHovering) goToIndex(i);
     });
 
     dotsContainer.appendChild(dot);
   });
 }
+
+function goToIndex(index) {
+      currentIndex = (index + projects.length) % projects.length;
+      showPreview(currentIndex);
+      stopLoop();
+      startLoop();
+    }
 
 function updateDots() {
   const dots = dotsContainer.querySelectorAll(".dot");
@@ -212,16 +224,6 @@ function showPreview(index) {
   loopContainer.innerHTML = `<img src="images/${project.folder}/preview-bw.jpg" class="loop-image" />`;
   updateDots();
 }
-
-leftArrow.addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + projects.length) % projects.length;
-  if (!isHovering) showPreview(currentIndex);
-});
-
-rightArrow.addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % projects.length;
-  if (!isHovering) showPreview(currentIndex);
-});
 
 // Nascode il footer della colonna 3
 document.getElementById('loop-B').addEventListener('mouseenter', () => {

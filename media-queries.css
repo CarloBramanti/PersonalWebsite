@@ -13,6 +13,10 @@
     display: none;
   }
 
+  .navigation-mobile{
+    display: none;
+  }
+
   .hor-line,
   .phone-footer {
     display: none;
@@ -21,16 +25,27 @@
   .phone-nav-bar {
     display: none;
   }
+
+  .navigation-tablet{
+    display: none;
+  }
 }
 
 /* Schermi medi: massimo 1000px -> 2 colonne */
 @media (max-width: 1146px) {
-
-
+ 
   .slash {
     display: inline-block;
   }
 
+  #title-3-desktop,
+  #title-2-desktop{
+    display: none;
+  }
+
+.navigation-mobile{
+    display: none;
+  }
 
   .column,
   .column2 {
@@ -82,7 +97,6 @@
   #show-col-3:checked~.layout .navigation #title-3 {
     text-decoration: underline;
   }
-
 
   .nav-bar {
     display: flex;
@@ -147,7 +161,16 @@
 @media (max-width: 765px) {
 
   .toggle {
-    width: initial
+    width: initial;
+    margin: 0px;
+  }
+
+  .carlo{
+    display: none !important;
+  }
+
+  .navigation-tablet{
+    display: none;
   }
 
   .toggle:first-child {
@@ -164,6 +187,12 @@
     width: 100vw;
   }
 
+  .nav-bar-1{
+    display: flex;
+    margin-right: 20px;
+    justify-content: space-between;
+  }
+
   .column-title,
   .page-title:hover {
     cursor: pointer;
@@ -171,17 +200,19 @@
 
   .navigation {
     width: 100vw;
-    display: flex;
+    display: none;
     justify-content: space-between;
   }
 
   .space-between{
     display: flex !important;
-    flex: 2;
+    flex: 1;
   }
 
-  .space-right{
-    width: 40px;
+  .navigation-mobile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .column-title:hover {
@@ -231,8 +262,7 @@
   }
 
   .caption {
-    margin-right: 20px;
-    font-size: 15pt;
+    font-size: 14pt;
     line-height: 1.15;
   }
 
@@ -279,10 +309,38 @@
 
 }
 
-@media (max-width: 550px) {
+@media (max-width: 764px) {
 
   .project-frame,
   .project-frame-B {
-    height: 250px;
+    height: 30vh;
+  }
+}
+
+@media (max-width: 550px) {
+  .project-frame,
+  .project-frame-B {
+    height: 25vh;
+  }
+}
+
+@media (max-width: 440px) {
+
+  .nav-right {
+    flex-direction: column;      /* mette uno sopra l’altro */
+    align-items: flex-end;       /* allinea a destra */
+    padding-right: 10px;
+  }
+
+  .nav-right .slash {
+    display: none;               /* sparisce lo slash */
+  }
+
+  .navigation-mobile{
+    align-items: flex-start;
+  }
+
+  .top-bar{
+    height: 80px;
   }
 }

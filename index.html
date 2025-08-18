@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media-queries.css">
     <link rel="stylesheet" href="https://use.typekit.net/jru0sxb.css">
-    <style>
-
-    </style>
 </head>
 
 <body onload="setTheme()">
@@ -24,18 +21,25 @@
         <div class="line line-2"></div>
         <div class="line line-3"></div>
 
-        <div class="navigation">
-            <label for="show-col-1" class="toggle page-title" id="title-1">Carlo Bramanti</label>
-            <div class="space-between" style="display: none;"></div>
-            <label for="show-col-2" class="toggle column-title" id="title-2">Latest</label>
-            <div class="slash">&nbsp;/&nbsp;</div>
-            <label for="show-col-3" class="toggle column-title" id="title-3">Other Projects</label>
-
-        </div>
-
         <!-- COLUMN 1 -->
         <div class="column" id="col-1">
-            <div class="nav-bar-1">
+
+            <label for="show-col-1" class="toggle page-title carlo" id="title-1">Carlo Bramanti</label>
+
+
+            <div class="navigation-mobile">
+                <label for="show-col-1" class="toggle page-title" id="title-1">Carlo Bramanti</label>
+
+                <div class="nav-right">
+                    <label for="show-col-2" class="toggle column-title" id="title-2">Latest</label>
+                    <div class="slash">&nbsp;/&nbsp;</div>
+                    <label for="show-col-3" class="toggle column-title" id="title-3">Other Projects</label>
+                </div>
+
+            </div>
+
+            <div class="top-bar">
+                <div class="Call-to-action"></div>
             </div>
 
             <div class="BIO">
@@ -75,6 +79,27 @@
 
         <!-- COLUMN 2 -->
         <div class="column2" id="col-2">
+
+            <label for="show-col-2" class="toggle column-title" id="title-2-desktop">Latest</label>
+
+            <div class="navigation-tablet">
+                <label style="text-decoration: underline;" for="show-col-2" id="title-2">LATEST</label>
+                <div>/</div>
+                <label class="Link" for="show-col-3" id="title-3">OTHER PROJECTS</label>
+            </div>
+
+            <div class="navigation-mobile">
+                <label for="show-col-1" class="toggle page-title" id="title-1">Carlo Bramanti</label>
+
+                <div class="nav-right">
+                    <label style="text-decoration: underline;" for="show-col-2" class="toggle column-title"
+                        id="title-2">Latest</label>
+                    <div class="slash">&nbsp;/&nbsp;</div>
+                    <label for="show-col-3" class="toggle column-title" id="title-3">Other Projects</label>
+                </div>
+
+            </div>
+
             <div class="top-bar">
                 <div class="Call-to-action">My book <em>Conspiratorial Design</em><br>is out now for Set Margins'. Get
                     it <a class="Link" href="https://www.setmargins.press/books/conspiratorial-design/"
@@ -101,9 +126,29 @@
 
         <!-- COLUMN 3 -->
         <div class="column3" id="col-3">
+
+            <label for="show-col-3" class="toggle column-title" id="title-3-desktop">Other Projects</label>
+
+            <div class="navigation-tablet">
+                <label class="Link" for="show-col-2" id="title-2">LATEST</label>
+                <div>/</div>
+                <label style="text-decoration: underline;" for="show-col-3" id="title-3">OTHER PROJECTS</label>
+            </div>
+
+            <div class="navigation-mobile">
+                <label for="show-col-1" class="toggle page-title" id="title-1">Carlo Bramanti</label>
+
+                <div class="nav-right">
+                    <label for="show-col-2" class="toggle column-title" id="title-2">Latest</label>
+                    <div class="slash">&nbsp;/&nbsp;</div>
+                    <label style="text-decoration: underline;" for="show-col-3" class="toggle column-title"
+                        id="title-3">Other Projects</label>
+                </div>
+
+            </div>
             <div class="top-bar">
                 <div class="project-intro-bar">
-                    <div class="project-intro-text">A small selection of projects I worked on.</div>
+                    <div class="project-intro-text">A small selection <br>of projects I worked on.</div>
                     <div class="gallery-arrows">
                         <img id="arrow-left" src="arrow-left-red.svg" style="height: 16px; margin-right: 10px">
                         <img id="arrow-right" src="arrow-right-red.svg"
@@ -132,10 +177,10 @@
             </div>
             <div style="display: flex; flex-direction: row;">
                 <a class="Link" href="https://www.instagram.com/carlo_bramanti_/" target="_blank"
-                    style="font-family: 'Untittled'; padding-top: 7px; margin-left: 10px; text-decoration: underline;">Instagram</a>
+                    style="font-family: 'Ronzino'; padding-top: 7px; margin-left: 10px; text-decoration: underline;">Instagram</a>
             </div>
         </div>
-        <div class="Contact">Portfolio available upon request</div>
+        <div class="Portfolio">Portfolio available upon request</div>
     </div>
 
     <script src="loop.js"></script>

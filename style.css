@@ -57,7 +57,8 @@ body {
   display: flex;
   justify-content: space-between;
   height: calc(var(--space) * 4);
-  margin: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
   margin-bottom: 0px;
 }
 
@@ -68,6 +69,14 @@ body {
 
 }
 
+.navigation-tablet{
+  display: flex;
+  gap: 5px;
+  margin: 20px;
+  font-family: 'adobe-jenson-pro', serif;
+  font-weight: 700; font-style: normal;
+}
+
 .phone-nav-bar-elements {
   font-family: "adobe-jenson-pro", serif;
   font-weight: 700;
@@ -76,7 +85,7 @@ body {
 }
 
 .page-title {
-  font-family: 'Untitled';
+  font-family: 'Ronzino';
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -105,7 +114,7 @@ body {
 }
 
 .project-intro-text {
-  font-family: 'Untitled';
+  font-family: 'Ronzino';
   font-weight: 500;
   line-height: 1.2;
   flex: 1 1 auto;
@@ -127,7 +136,7 @@ body {
 }
 
 .Call-to-action {
-  font-family: 'Untitled';
+  font-family: 'Ronzino';
   font-weight: 500;
   line-height: 1.2;
   position: absolute;
@@ -143,7 +152,7 @@ body {
   align-items: center;
   border-style: solid;
   border-width: 3px;
-  height: 300px;
+  height: 33vh;
   border-right: none;
   border-left: none;
   margin-top: -3px;
@@ -156,7 +165,7 @@ body {
   border-style: solid;
 
   border-width: 3px;
-  height: 300px;
+  height: 33vh;
   width: 100%;
   border-right: none;
   border-left: none;
@@ -200,17 +209,16 @@ body {
   font-family: "adobe-jenson-pro", serif;
   font-weight: 400;
   font-style: normal;
-
   font-size: 20pt;
   margin-right: 40px;
   margin-left: 20px;
   height: 280px;
-  padding-top: 20px;
+  padding-top: 10px;
   line-height: 1.1;
 }
 
 .Alt-BIO {
-  font-family: 'Untitled';
+  font-family: 'Ronzino';
   font-size: 14pt;
   font-weight: 500;
   margin-left: 20px;
@@ -227,7 +235,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  font-family: 'Untitled', sans-serif;
+  font-family: 'Ronzino', sans-serif;
   font-weight: 500;
   font-size: 14pt;
   margin-right: 25%;
@@ -237,15 +245,25 @@ body {
 }
 
 .Contact {
-  font-family: 'Untitled';
+  font-family: 'Ronzino';
   font-size: 12pt;
   font-weight: 400;
   margin-left: 20px;
   margin-right: 20px;
 }
 
+.Portfolio {
+  font-family: 'Ronzino';
+  font-size: 10.5pt;
+  line-height: 1.4;
+  text-align: right;
+  font-weight: 400;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .Get-in-touch {
-  font-family: 'Untitled';
+  font-family: 'Ronzino';
   font-weight: 700;
   font-style: normal;
   font-size: 12pt;
@@ -271,7 +289,7 @@ body {
   padding-top: 5px;
   bottom: 0px;
   width: 33.333vw;
-  font-family: 'Untitled';
+  font-family: 'Ronzino';
   font-size: 12pt;
   font-weight: 400;
   padding-left: 20px;
@@ -307,7 +325,7 @@ body {
 }
 
 .CD-Title{
-  font-family: 'Untitled';
+  font-family: 'Ronzino';
   font-weight: 500;
   font-size: 11pt;
   line-height: 1;
@@ -326,7 +344,7 @@ body {
 }
 
 .caption-wrapper {
-  height: 440px;
+  height: 100%;
   padding-top: 10px;
 }
 
@@ -334,7 +352,7 @@ body {
   display: flex;
   justify-content: right;
   flex-direction: row;
-  direction: rtl;
+  direction: ltr;
   gap: 30px;
   margin-top: 20px;
   margin-right: 40px;
@@ -414,22 +432,22 @@ body {
 
 /*Import Fonts*/
 @font-face {
-  font-family: 'Untitled';
-  src: url('Fonts/UntitledSans-Medium.otf') format(opentype);
+  font-family: 'Ronzino';
+  src: url('Fonts/Ronzino-Medium.woff2') format(woff);
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Untitled';
-  src: url('Fonts/UntitledSans-MediumItalic.otf') format(opentype);
+  font-family: 'Ronzino';
+  src: url('Fonts/Ronzino-MediumOblique.woff2') format(woff);
   font-weight: 500;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Untitled';
-  src: url('Fonts/UntitledSans-Regular.otf') format(opentype);
+  font-family: 'Ronzino';
+  src: url('Fonts/Ronzino-Regular.woff2') format(woff);
   font-weight: 400;
   font-style: normal;
 }
@@ -447,7 +465,21 @@ input[type="radio"] {
   margin-bottom: 0px;
 }
 
-.toggle {display: inline-block; width:33%}
+.navigation-mobile{
+  display: flex;
+  margin: 20px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.toggle {
+  display: inline-block; 
+  margin: 20px;
+}
 
  .slash {
     display: none;
