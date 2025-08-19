@@ -17,7 +17,6 @@
     display: none;
   }
 
-  .hor-line,
   .phone-footer {
     display: none;
   }
@@ -28,6 +27,13 @@
 
   .navigation-tablet{
     display: none;
+  }
+}
+
+@media (max-width: 1350px) {
+  .caption,
+  .CD-Blurb{
+    font-size: 19px;
   }
 }
 
@@ -141,7 +147,6 @@
     display: block;
   }
 
-  .hor-line,
   .phone-footer {
     display: none;
   }
@@ -160,6 +165,10 @@
 /* Schermi piccoli: massimo 765px -> 1 colonna */
 @media (max-width: 765px) {
 
+  body{
+    -webkit-text-stroke: 0.25px;
+  }
+
   .toggle {
     width: initial;
     margin: 0px;
@@ -169,8 +178,18 @@
     display: none !important;
   }
 
+  #top-bar-col1{
+    height: 2%;
+  }
+
   .navigation-tablet{
     display: none;
+  }
+
+  .BIO{
+    font-size: 24px;
+    height: 30%;
+    margin-bottom: 20px;
   }
 
   .toggle:first-child {
@@ -192,6 +211,10 @@
     margin-right: 20px;
     justify-content: space-between;
   }
+
+  #navigation-mobile-col1{
+  padding-bottom: 45px;
+}
 
   .column-title,
   .page-title:hover {
@@ -233,10 +256,6 @@
   .contacts-wrapper,
   .footer {
     display: none;
-  }
-
-  .hor-line {
-    display: block;
   }
 
   #Porfolio {
@@ -330,7 +349,12 @@
     flex-direction: column;      /* mette uno sopra l’altro */
     align-items: flex-end;       /* allinea a destra */
     padding-right: 10px;
+    gap: 8px;
   }
+
+  #navigation-mobile-col1{
+  padding-bottom: 20px;
+}
 
   .nav-right .slash {
     display: none;               /* sparisce lo slash */
@@ -341,6 +365,6 @@
   }
 
   .top-bar{
-    height: 80px;
+    height: 50px;
   }
 }

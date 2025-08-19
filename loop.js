@@ -9,8 +9,9 @@ const bioOptions = [
   "He hates writing bios where he speaks in third person of himself.",
   "His 4 favorites on Letterboxd are: John Wick, John Wick 2, John Wick 3, and John Wick 4.",
   "He likes, among others, the following video games: Return of the Obra Dinn, Hollow Knight, Kentucky Route Zero, Pokémon Crystal, The Binding of Isaac, Disco Elysium.",
-  "He is the top of the West, always cool, he is the best <a style='color: var(--textColor)' href='https://www.youtube.com/watch?v=sFFLQ89bJRM&t=1s' target='_blank'>*whistling*</a>",
+  "He is the top of the West, always cool, he is the best *<a style='color: var(--textColor)' href='https://www.youtube.com/watch?v=sFFLQ89bJRM&t=1s' target='_blank'>whistling</a>*",
   "He is in this <a style='color: var(--textColor)' href='images/Disco Elysium.png' target='_blank'>image</a>.",
+  "His highscore on Tetris.com is 1,000,077"
 ];
 
 const spinSpeed = 35; // velocità in millisecondi per ogni frame
@@ -39,7 +40,6 @@ function setTheme() {
   const arrowLeft = document.getElementById('arrow-left');
   const arrowRight = document.getElementById('arrow-right');
   const arrowDown = document.getElementById('arrow-down');
-  const arrowDownMobile = document.getElementById('arrow-down-mobile');
   const arrowLink1 = document.getElementById('arrow-link1');
   const arrowLink2 = document.getElementById('arrow-link2');
 
@@ -53,7 +53,6 @@ function setTheme() {
   arrowLink2.src = `arrow-right-${newColor}.svg`;
   arrowRight.src = `arrow-right-${newColor}.svg`;
   arrowDown.src = `arrow-down-${newColor}.svg`;
-  arrowDownMobile.src = `arrow-down-${newColor}.svg`;
 }
 
 
@@ -107,7 +106,7 @@ const projects = [
   {
     name: "Project 3",
     folder: "project3",
-    caption: "<em>The Bigger Picture</em> is an exploratory diagrammatic installation I designed as a graduation project at DAE. The installation consists of a room-sized flowchart drawn directly onto the exhibition surfaces with invisible ink so that it can be seen only a small bit at a time by using a UV-flashlight. Through the game/investigation experience made of crossroads, choices and secret easter eggs, I try to unpack all the information of my research about the formal and and theoretical similarities between design and conspiracy theories. <em>The Bigger Picture</em> tries to open a discussion about the perception of legitimacy of information, and about the role in society of design and conspiracy theories: two closed esoteric systems of knowledge in constant need to expand the scope of their research.",
+    caption: "<em>The Bigger Picture</em> is an exploratory diagrammatic installation I designed as a graduation project at DAE. The installation consists of a room-sized flowchart drawn directly onto the exhibition surfaces with invisible ink that can be seen only using a UV-flashlight. Through the game/investigation experience, made of crossroads, choices and hidden elements, I unpack the content of my research on the formal and and theoretical similarities between design and conspiracy theories. The project aims at opening a discussion about the legitimacy of information and the social perception of design and conspiracy theories: two esoteric systems of knowledge in constant need to expand the scope of their research.",
     colorImages: ["1.jpg", "2.jpg", "3.jpg"]
   },
 
@@ -121,7 +120,7 @@ const projects = [
   {
     name: "Project 5",
     folder: "project5",
-    caption: "<em>Representation Wars</em> is an infographic designed with the purpose of deconstructing the rhetorical function of nationalistic war depictions inside the Rijksmuseum in Amsterdam. Prompted by an assignment received during my MA to design an hacking intervention within the context of the Rijksmuseum that could counter its role of creator of national identity, I examined room 2.1.5 of the museum, where some of the most important depiction of dutch naval battles are exhibited. I then selected The Battle of Leghorn by Reiner Nooms as a case study and designed an essential infographic that could, by displaying some selected historical information, expose the limits of this painting as an historical document and explain the way it serves as tool of national glorification through a series of representational stratagems.",
+    caption: "<em>Representation Wars</em> is an infographic designed to try to deconstruct the rhetorical function of war depictions inside the Rijksmuseum in Amsterdam. Prompted by an assignment received during my MA to design an hacking intervention within the Rijksmuseum that would counter its act of creation of national identity, I examined room 2.1.5 of the museum, where some of the most important paintings of dutch naval battles are exhibited. I then selected 'The Battle of Leghorn' by Reiner Nooms as a case study and designed an essential infographic to expose the limits the painting as an historical document and show the way it serves as tool of national glorification.",
     colorImages: ["1.jpg", "2.jpg", "3.jpg"]
   },
   // aggiungi altri progetti

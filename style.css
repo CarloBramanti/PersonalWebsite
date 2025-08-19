@@ -209,7 +209,7 @@ body {
   font-family: "adobe-jenson-pro", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 20pt;
+  font-size: 26px;
   margin-right: 40px;
   margin-left: 20px;
   height: 280px;
@@ -254,8 +254,8 @@ body {
 
 .Portfolio {
   font-family: 'Ronzino';
-  font-size: 10.5pt;
-  line-height: 1.4;
+  font-size: 16px;
+  line-height: 1.2;
   text-align: right;
   font-weight: 400;
   margin-left: 20px;
@@ -269,7 +269,6 @@ body {
   font-size: 12pt;
   margin-left: 20px;
   margin-right: 20px;
-  padding-bottom: 2px;
   margin-left: 60px;
 }
 
@@ -319,9 +318,9 @@ body {
   font-family: "adobe-jenson-pro", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 16pt;
+  font-size: 21px;
   padding-top: 10px;
-  height: 360px;
+  height: 100%;
 }
 
 .CD-Title{
@@ -338,7 +337,7 @@ body {
   font-family: "adobe-jenson-pro", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 16pt;
+  font-size: 21px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -389,14 +388,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 80px;
-  position: fixed;
+  height: 70px;
+  position: absolute;
   bottom: 0;
   background-color: white;
   width: 100%;
+  border: 0px;
   border-top: 3px;
   border-style: solid;
   padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 #trigger-really:hover {
@@ -405,6 +406,7 @@ body {
 
 .Link {
   cursor: pointer;
+  color: var(--textColor);
 }
 
 .Link:hover {
@@ -467,7 +469,7 @@ input[type="radio"] {
 
 .navigation-mobile{
   display: flex;
-  margin: 20px;
+  padding: 20px;
 }
 
 .nav-right {
