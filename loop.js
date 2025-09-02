@@ -9,7 +9,7 @@ const bioOptions = [
   "He hates writing bios where he speaks in third person of himself.",
   "His 4 favorites on Letterboxd are: John Wick, John Wick 2, John Wick 3, and John Wick 4.",
   "He likes, among others, the following video games: Return of the Obra Dinn, Hollow Knight, Kentucky Route Zero, Pokémon Crystal, The Binding of Isaac, Disco Elysium.",
-  "He is the top of the West, always cool, he is the best *<a style='color: var(--textColor)' href='https://www.youtube.com/watch?v=sFFLQ89bJRM&t=1s' target='_blank'>whistling</a>*",
+  "He is the top of the West, always cool, he is the best *<a style='color: var(--textColor)' href=' https://youtu.be/sFFLQ89bJRM?si=ppRm6G_ITwrYg1Xx&t=81' target='_blank'>whistling</a>*",
   "He is in this <a style='color: var(--textColor)' href='images/Disco Elysium.png' target='_blank'>image</a>.",
   "His highscore on Tetris.com is 1,000,077"
 ];
@@ -94,7 +94,7 @@ const projects = [
   {
     name: "Project 1",
     folder: "project1",
-    caption: "<em>Spoiled Air</em> is a project of visualization of air and its relationship with mental health issues. Prompted by an assignment received during my MA to visualize the invisible element by definition, air, I developed an essential installation that gives the viewer a series of quantified information about air volumes, atmospheric composition, breathing mechanisms, and the perception of such in situations of isolation and psychological distress. The information is represented through the metaphoric unit of inflatable origamis, hinting both at the calming practice of breathing in a paper bag, and at the sense of enclosure and missing air that various conditions of psychological struggle can induce. The last bit of information eventually opens as the origami unfolds, inviting to breathe.",
+    caption: "<em>Spoiled Air</em> is a project of visualization of air and its relationship with mental health issues. The installation, designed for an assignment during my MA at DAE, displays a series of quantified information about air volumes, atmospheric composition, breathing mechanisms, and the perception of such in situations of isolation and psychological distress. The information is represented through the metaphoric unit of inflatable origamis, hinting both at the calming practice of breathing in a paper bag, and at the sense of enclosure and missing air that various conditions of psychological struggle can induce. The last bit of information eventually opens as the origami unfolds, inviting to breathe.",
     colorImages: ["1.jpg", "2.jpg", "3.jpg"]
   },
   {
@@ -121,6 +121,13 @@ const projects = [
     name: "Project 5",
     folder: "project5",
     caption: "<em>Representation Wars</em> is an infographic designed to try to deconstruct the rhetorical function of war depictions inside the Rijksmuseum in Amsterdam. Prompted by an assignment received during my MA to design an hacking intervention within the Rijksmuseum that would counter its act of creation of national identity, I examined room 2.1.5 of the museum, where some of the most important paintings of dutch naval battles are exhibited. I then selected 'The Battle of Leghorn' by Reiner Nooms as a case study and designed an essential infographic to expose the limits the painting as an historical document and show the way it serves as tool of national glorification.",
+    colorImages: ["1.jpg", "2.jpg", "3.jpg"]
+  },
+
+  {
+    name: "Project 6",
+    folder: "project6",
+    caption: "<em>Cosa scopro quando disegno</em> (What I find out as I draw) is my thesis and graduation project from my BA at ISIA Urbino. It is an inquiry into the processes of learning and unlearning how to draw. As the ability to draw analogically becomes less and less present in designers' practices it keeps on offering a multitude of discoveries and questions, both practical and philosophical, particularly when framed as process-centered activity. Cosa scopro quando disegno is a publication that collects historical cases, interviews, personal reflections, and self-initiated workshops, all centered on exercises that invite to deconstruct our understanding of drawing.",
     colorImages: ["1.jpg", "2.jpg", "3.jpg"]
   },
   // aggiungi altri progetti
