@@ -26,6 +26,7 @@ body {
 .project-slide{
   width: 100%;
   height: calc(100vh - 229px) !important;
+  height: calc(100dvh - 229px) !important;
   overflow: scroll;
   .project-slide-image{
     width: 100%;
