@@ -1,6 +1,6 @@
 // Swiper initialisation
 var swiper = new Swiper(".proj-mobile", {
-  loop: false,
+  loop: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true
@@ -291,7 +291,7 @@ function loadProjects(){
 }
 
 
-addEventListener("resize", (event) => {loadProjects()})
+//addEventListener("resize", (event) => {loadProjects()})
 
 
 // Tooltip tracking
