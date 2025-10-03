@@ -1,3 +1,6 @@
+// Swiper initialisation
+var swiper = new Swiper(".proj-mobile", {loop: true});
+
 // Colonna 1 Reroll BIO
 const trigger = document.getElementById('trigger-really');
 const funnyBio = document.getElementById('funny-bio');
@@ -6,16 +9,18 @@ const textColors = ['red', 'blue'];
 
 const bioOptions = [
   //"He does messy drawings to make his brain shut down.",
-  "He hates writing bios where he speaks in third person of himself.",
-  "His 4 favorites on Letterboxd are: John Wick, John Wick 2, John Wick 3, and John Wick 4.",
-  "He likes, among others, the following video games: Return of the Obra Dinn, Hollow Knight, Kentucky Route Zero, Pokémon Crystal, The Binding of Isaac, Disco Elysium.",
-  "He is the top of the West, always cool, he is the best *<a style='color: var(--textColor)' href=' https://youtu.be/sFFLQ89bJRM?si=ppRm6G_ITwrYg1Xx&t=81' target='_blank'>whistling</a>*",
-  "He is in this <a style='color: var(--textColor)' href='images/Disco Elysium.png' target='_blank'>image</a>.",
-  "His highscore on Tetris.com is 1,000,077"
+  //"He hates writing bios where he speaks in third person of himself.",
+  //"His 4 favorites on Letterboxd are: John Wick, John Wick 2, John Wick 3, and John Wick 4.",
+  //"He likes, among others, the following video games: Return of the Obra Dinn, Hollow Knight, Kentucky Route Zero, Pokémon Crystal, The Binding of Isaac, Disco Elysium.",
+  //"He is the top of the West, always cool, he is the best *<a style='color: var(--textColor)' href=' https://youtu.be/sFFLQ89bJRM?si=ppRm6G_ITwrYg1Xx&t=81' target='_blank'>whistling</a>*",
+  //"He is in this <a style='color: var(--textColor)' href='images/Disco Elysium.png' target='_blank'>image</a>.",
+  //"His highscore on Tetris.com is 1,000,077",
+  "He is the Referendary of the Order of the Rosicrucians in Europe, Secret Knight of the Grand Priory In Patribus of Rhodes, Malta and Thessaloniki."
 ];
 
 const spinSpeed = 35; // velocità in millisecondi per ogni frame
 const spinDuration = 1100; // durata totale in millisecondi
+const mobileSize = window.matchMedia("(max-width: 765px)");
 
 function getRandomIntInclusive(min, max) {
   const minCeiled = Math.ceil(min);
@@ -40,8 +45,6 @@ function setTheme() {
   const arrowLeft = document.getElementById('arrow-left');
   const arrowRight = document.getElementById('arrow-right');
   const arrowDown = document.getElementById('arrow-down');
-  const arrowLink1 = document.getElementById('arrow-link1');
-  const arrowLink2 = document.getElementById('arrow-link2');
 
   const i = getRandomIntInclusive(0, textColors.length - 1)
   const newColor = textColors[i];
@@ -49,12 +52,9 @@ function setTheme() {
   root.style.setProperty('--textColor', newColor);
 
   arrowLeft.src = `arrow-left-${newColor}.svg`;
-  arrowLink1.src = `arrow-right-${newColor}.svg`;
-  arrowLink2.src = `arrow-right-${newColor}.svg`;
   arrowRight.src = `arrow-right-${newColor}.svg`;
   arrowDown.src = `arrow-down-${newColor}.svg`;
 }
-
 
 // Colonna 2 Loop immagini libro
 const latestFrame = document.getElementById('latest-frame');
@@ -240,8 +240,71 @@ document.getElementById('loop-B').addEventListener('mouseleave', () => {
   document.getElementById('Portfolio').style.display = 'block'; // o 'flex', ecc.
 });
 
+
+// Genera slide progetti mobile
+function loadProjects(){
+  if (mobileSize.matches){
+    let wrapper = document.getElementsByClassName('swiper-wrapper')[0];
+
+    for (proj of projects){
+      let projectIndex = projects.indexOf(proj);
+
+      let slide = document.createElement('div');
+      slide.classList.add('project-slide', 'swiper-slide');
+
+      // Image
+
+      let imageWrapper = document.createElement('div');
+      imageWrapper.classList.add('project-slide-image');
+      let image = document.createElement('img');
+      image.src = `images/${proj.folder}/${proj.colorImages[0]}`;
+      imageWrapper.append(image);
+      image.addEventListener("click", () => {
+        let p = projects[projectIndex];
+        colorIndex++;
+        image.src = `images/${p.folder}/${p.colorImages[colorIndex % p.colorImages.length]}`;
+      });
+      
+
+      // Caption
+      let captionWrapper = document.createElement('div');
+      captionWrapper.classList.add('caption-wrapper');
+      let caption = document.createElement('p');
+      caption.classList.add('caption');
+      caption.innerHTML = proj.caption;
+      captionWrapper.append(caption);
+      
+      
+      slide.append(imageWrapper);
+      slide.append(captionWrapper);
+      wrapper.append(slide);
+
+
+    }
+  }
+}
+
+
+addEventListener("resize", (event) => {loadProjects()})
+
+
+// Tooltip tracking
+const tooltip = document.getElementById('tooltip');
+const projectframeB = document.getElementsByClassName('project-frame-B')[0];
+projectframeB.addEventListener("mousemove", (e) => {
+    const rect = tooltip.getBoundingClientRect();
+    const x = e.clientX - (rect.width/2);
+    const y = e.clientY + 10;
+
+    tooltip.style.left = `${x}px`;
+    tooltip.style.top = `${y}px`;
+});
+
+
+
 // Inizializza
 showPreview(currentIndex);
 startLoop();
 createDots();
 updateDots();
+loadProjects();

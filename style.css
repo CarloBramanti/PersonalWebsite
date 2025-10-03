@@ -19,17 +19,58 @@ body {
   flex-wrap: nowrap;
 }
 
+.proj-mobile{
+  display: none !important;
+}
+
+.project-slide{
+  width: 100%;
+  height: calc(100vh - 229px) !important;
+  overflow: scroll;
+  .project-slide-image{
+    width: 100%;
+    height: 250px;
+    border-bottom: 3px solid var(--textColor);
+  }
+  img{width: 100%; height: 100%; object-fit: cover; cursor: pointer;}
+}
+
 /*Columns and lines*/
 .column,
 .column2,
 .column3 {
   width: 33.333vw;
   float: left;
+  padding-bottom: 20px;
+  overflow: scroll;
+  
 }
+
+.project-frame-B:hover #tooltip{
+ display: unset;
+}
+#tooltip{
+  display: none;
+  width: fit-content;
+  background-color: white;
+  border: 2px solid var(--textColor);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+} 
 
 #title-3{
   width: 141px;
 }
+
+.Portfolio-mobile{
+    display: none;
+  }
+
+#footer-col2-3{
+    border-top: 3px solid var(--textColor);
+  }
 
 .column3 {
   user-select: none;
@@ -348,7 +389,7 @@ body {
 }
 
 .caption-wrapper {
-  height: 100%;
+  height: unset;
   padding-top: 10px;
 }
 
@@ -394,7 +435,7 @@ body {
   justify-content: space-between;
   align-items: flex-end;
   height: 70px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background-color: white;
   width: 100%;

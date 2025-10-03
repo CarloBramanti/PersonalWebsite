@@ -8,16 +8,16 @@
     display: none;
   }
 
+  .phone-footer{
+    width: 33.33vw;
+  }
+
   #nav-bar-3,
   #footer-col1 {
     display: none;
   }
 
   .navigation-mobile{
-    display: none;
-  }
-
-  .phone-footer {
     display: none;
   }
 
@@ -28,6 +28,10 @@
   .navigation-tablet{
     display: none;
   }
+
+  #tap-for-more{
+    display: none;
+  }
 }
 
 @media (max-width: 1350px) {
@@ -35,13 +39,29 @@
   .CD-Blurb{
     font-size: 19px;
   }
+
+  #tap-for-more{
+    display: none;
+  }
 }
 
 /* Schermi medi: massimo 1000px -> 2 colonne */
 @media (max-width: 1146px) {
- 
+
   .slash {
     display: inline-block;
+  }
+
+  #footer-col2-3{
+    width: 50%;
+  }
+
+  .phone-footer{
+    width: 50%;
+  }
+
+  #tap-for-more{
+    display: none;
   }
 
   #title-3-desktop,
@@ -147,10 +167,6 @@
     display: block;
   }
 
-  .phone-footer {
-    display: none;
-  }
-
   .contacts-wrapper-small {
     display: none;
   }
@@ -169,13 +185,44 @@
     -webkit-text-stroke: 0.25px;
   }
 
+  .proj-desktop{
+    display: none;
+  }
+  .proj-mobile{
+    display: block !important;
+    width: 100%;
+  }
+
+  .Portfolio-mobile{
+    display: unset;
+  }
+
+  .phone-footer{
+    width: 100%;
+  }
+
+.column,
+.column2,
+.column3 {
+  height: calc(100vh - 93px);
+  max-width: 100%;
+  overflow: scroll;
+}
+
+.line-3{display: none;}
+
+#col-3 .top-bar{border-bottom: 3px solid var(--textColor);}
+#title-1{max-width: 40%;}
+  
+
   .toggle {
     width: initial;
     margin: 0px;
   }
+  
 
-  .carlo{
-    display: none !important;
+  .project-intro-text{
+    font-size: 14px;
   }
 
   #top-bar-col1{
@@ -188,18 +235,31 @@
 
   .BIO{
     font-size: 24px;
-    height: 30%;
-    margin-bottom: 20px;
+    height: fit-content;
+    margin-bottom: 0px;
   }
 
   .toggle:first-child {
     width: initial
   }
 
+  #funny-bio{
+    position: relative;
+  }
+
+  .bio-wrapper{
+    height: unset;
+    padding-bottom: 20px;
+  }
+
   #col-1,
   #col-2,
   #col-3 {
     width: 100vw;
+  }
+
+  #title-1-desktop{
+    display: none;
   }
 
   .layout {
@@ -277,7 +337,8 @@
   }
 
   .caption-wrapper {
-    height: 450px;
+    height: unset;
+    padding-bottom: 20px;
   }
 
   .caption {
@@ -341,6 +402,14 @@
   .project-frame-B {
     height: 25vh;
   }
+
+  .gallery-arrows{
+    display: none;
+  }
+
+  #tap-for-more{
+    display: flex;
+  }
 }
 
 @media (max-width: 440px) {
@@ -366,5 +435,11 @@
 
   .top-bar{
     height: 50px;
+  }
+}
+
+@media (max-width: 440px) {
+  .Portfolio{
+    font-size: 14px;
   }
 }

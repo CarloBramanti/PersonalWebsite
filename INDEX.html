@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media-queries.css">
     <link rel="stylesheet" href="https://use.typekit.net/jru0sxb.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body onload="setTheme()">
@@ -24,7 +25,7 @@
         <!-- COLUMN 1 -->
         <div class="column" id="col-1">
 
-            <label for="show-col-1" class="toggle page-title carlo" id="title-1">Carlo Bramanti</label>
+            <label for="show-col-1" class="toggle page-title carlo" id="title-1-desktop">Carlo Bramanti</label>
 
 
             <div class="navigation-mobile" id="navigation-mobile-col1">
@@ -59,20 +60,6 @@
                 <div id="funny-bio">…</div>
             </div>
 
-            <div id="footer-col2&3" class="footer">
-                <div class="Get-in-touch">Get in touch</div>
-                <div style="display: flex; flex-direction: row;">
-                    <img id="arrow-link1" src="arrow-right-red.svg"
-                        style="height: 20px; padding-top: 10px; margin-left: 20px;">
-                    <div class="Contact" style="padding-top: 7px; margin-left: 10px; text-decoration: underline">
-                        carlo.bramanti98@gmail.com</div>
-                </div>
-                <div style="display: flex; flex-direction: row;">
-                    <img id="arrow-link2" src="arrow-right-red.svg"
-                        style="height: 20px; padding-top: 10px; margin-left: 20px;">
-                    <a class="Link" href="https://www.instagram.com/carlo_bramanti_/" target="_blank" style="font-family: 'Ronzino'; padding-top: 7px; margin-left: 10px; text-decoration: underline;">Instagram</a>
-                </div>
-            </div>
         </div>
 
         <!-- COLUMN 2 -->
@@ -152,16 +139,28 @@
                         <img id="arrow-right" src="arrow-right-red.svg"
                             style="height: 16px; margin-right: 10px; position: relative;">
                     </div>
+                    <div id="tap-for-more" style="margin-left: 10px; font-family: 'Ronzino'; font-size: 14px;">tap for more</div>
                 </div>
             </div>
-            <div class="project-frame-B">
-                <div class="image-loop" id="loop-B"></div>
-            </div>
+            <section class="proj-desktop">
+                <div class="project-frame-B">
+                    <span id="tooltip">click for more</span>
+                    <div class="image-loop" id="loop-B"></div>
+                </div>
 
-            <div class="gallery-dots" id="gallery-dots-B"></div>
-            <div class="caption-wrapper">
-                <div class="caption" id="caption-B"></div>
-            </div>
+                <div class="gallery-dots" id="gallery-dots-B"></div>
+
+                <div class="caption-wrapper">
+                    <div class="caption" id="caption-B"></div>
+                </div>
+            </section>
+            <section class="swiper proj-mobile">
+                <div class="swiper-wrapper">
+                    <!--<div class="swiper-slide" style="background-color: yellow;">Slide1</div>
+                    <div class="swiper-slide" style="background-color: cornsilk;">Slide 2</div>
+                    <div class="swiper-slide" style="background-color: yellow;">Slide 3</div>-->
+                </div>
+            </section>
             <div class="footer3" id="Portfolio">Portfolio available upon request</div>
         </div>
     </div>
@@ -178,8 +177,11 @@
                     style="font-family: 'Ronzino'; padding-top: 7px; margin-left: 10px; text-decoration: underline;">Instagram</a>
             </div>
         </div>
-        <div class="Portfolio">Portfolio available upon request</div>
+        <div class="Portfolio Portfolio-mobile">Portfolio available upon request</div>
     </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="loop.js"></script>
 </body>
