@@ -1,6 +1,6 @@
 // Swiper initialisation
 var swiper = new Swiper(".proj-mobile", {
-  loop: true,
+  loop: false,
   pagination: {
     el: ".swiper-pagination",
     clickable: true
