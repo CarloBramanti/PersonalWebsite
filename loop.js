@@ -1,5 +1,10 @@
 // Swiper initialisation
-var swiper = new Swiper(".proj-mobile", {loop: true});
+var swiper = new Swiper(".proj-mobile", {
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
 
 // Colonna 1 Reroll BIO
 const trigger = document.getElementById('trigger-really');
@@ -8,13 +13,13 @@ const funnyBio = document.getElementById('funny-bio');
 const textColors = ['red', 'blue'];
 
 const bioOptions = [
-  //"He does messy drawings to make his brain shut down.",
-  //"He hates writing bios where he speaks in third person of himself.",
-  //"His 4 favorites on Letterboxd are: John Wick, John Wick 2, John Wick 3, and John Wick 4.",
-  //"He likes, among others, the following video games: Return of the Obra Dinn, Hollow Knight, Kentucky Route Zero, Pokémon Crystal, The Binding of Isaac, Disco Elysium.",
-  //"He is the top of the West, always cool, he is the best *<a style='color: var(--textColor)' href=' https://youtu.be/sFFLQ89bJRM?si=ppRm6G_ITwrYg1Xx&t=81' target='_blank'>whistling</a>*",
-  //"He is in this <a style='color: var(--textColor)' href='images/Disco Elysium.png' target='_blank'>image</a>.",
-  //"His highscore on Tetris.com is 1,000,077",
+  "He does messy drawings to make his brain shut down.",
+  "He hates writing bios where he speaks in third person of himself.",
+  "His 4 favorites on Letterboxd are: John Wick, John Wick 2, John Wick 3, and John Wick 4.",
+  "He likes, among others, the following video games: Return of the Obra Dinn, Hollow Knight, Kentucky Route Zero, Pokémon Crystal, The Binding of Isaac, Disco Elysium.",
+  "He is the top of the West, always cool, he is the best *<a style='color: var(--textColor)' href=' https://youtu.be/sFFLQ89bJRM?si=ppRm6G_ITwrYg1Xx&t=81' target='_blank'>whistling</a>*",
+  "He is in this <a style='color: var(--textColor)' href='images/Disco Elysium.png' target='_blank'>image</a>.",
+  "His highscore on Tetris.com is 1,000,077",
   "He is the Referendary of the Order of the Rosicrucians in Europe, Secret Knight of the Grand Priory In Patribus of Rhodes, Malta and Thessaloniki."
 ];
 
