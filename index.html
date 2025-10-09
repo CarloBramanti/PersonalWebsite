@@ -90,9 +90,9 @@
                     it <a class="Link" href="https://www.setmargins.press/books/conspiratorial-design/"
                         target="_blank">here</a></div>
             </div>
-            <div class="project-frame" id="latest-frame">
-                <img id="latest-image" src="images/CD_cover.jpg" alt="Latest Project" />
-            </div>
+            <a class="project-frame" style="color: var(--textColor);" href="https://www.setmargins.press/books/conspiratorial-design/" target="_blank" id="latest-frame">
+                <img id="latest-image" src="images/CD/1.gif" alt="Latest Project" />
+            </a>
             <div style="margin: 20px;">
                 <div class="CD-Title">CONSPIRATORIAL DESIGN</div>
                 <div class="CD-Blurb">“Design is generally perceived as something that simplifies
@@ -134,27 +134,31 @@
             <div class="top-bar">
                 <div class="project-intro-bar">
                     <div class="project-intro-text">A small selection <br>of projects I worked on.</div>
-                    <div class="gallery-arrows">
+                </div>
+            </div>
+
+            <section class="proj-desktop">
+                <div class="project-frame-B">
+                    <span id="tooltip" class="tooltip"> click for more </span>
+                    <div class="image-loop" id="loop-B"></div>
+                    
+                </div>
+
+                <div class="other-projects-nav">
+                <div class="gallery-arrows">
                         <img id="arrow-left" src="arrow-left-red.svg" style="height: 16px; margin-right: 10px">
                         <img id="arrow-right" src="arrow-right-red.svg"
                             style="height: 16px; margin-right: 10px; position: relative;">
                     </div>
-                    <div id="tap-for-more" style="margin-left: 10px; font-family: 'Ronzino'; font-size: 14px;">tap for more</div>
+                    <div class="gallery-dots" id="gallery-dots-B"></div>
                 </div>
-            </div>
-            <section class="proj-desktop">
-                <div class="project-frame-B">
-                    <span id="tooltip">click for more</span>
-                    <div class="image-loop" id="loop-B"></div>
-                </div>
-
-                <div class="gallery-dots" id="gallery-dots-B"></div>
 
                 <div class="caption-wrapper">
                     <div class="caption" id="caption-B"></div>
                 </div>
             </section>
             <section class="swiper proj-mobile">
+                <div id="tap-for-more" class="tap-for-more">tap for more</div>
                 <div class="swiper-wrapper"></div>
                 <div class="swiper-pagination"></div>
             </section>

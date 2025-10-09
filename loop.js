@@ -46,6 +46,18 @@ trigger.addEventListener('click', () => {
   }, spinDuration);
 });
 
+funnyBio.addEventListener('click', () => {
+  let interval = setInterval(() => {
+    funnyBio.innerHTML = bioOptions[Math.floor(Math.random() * bioOptions.length)];
+  }, spinSpeed);
+
+  setTimeout(() => {
+    clearInterval(interval);
+    // Fissa la bio finale casuale
+    funnyBio.innerHTML = bioOptions[Math.floor(Math.random() * bioOptions.length)];
+  }, spinDuration);
+});
+
 //Picks the right file according to the theme (red or blue)
 function setTheme() {
   const arrowLeft = document.getElementById('arrow-left');
@@ -62,45 +74,12 @@ function setTheme() {
   arrowDown.src = `arrow-down-${newColor}.svg`;
 }
 
-// Colonna 2 Loop immagini libro
-const latestFrame = document.getElementById('latest-frame');
-const latestImage = document.getElementById('latest-image');
-const latestImages = ['images/CD/latest1.jpg', 'images/CD/latest2.jpg', 'images/CD/latest3.jpg'];
-let latestIndex = 0;
-let latestInterval = null;
-
-function startLatestLoop() {
-  latestImage.src = latestImages[latestIndex];
-  latestImage.style.maxHeight = '100%'; // oppure mantieni 90% se preferisci
-  latestIndex = (latestIndex + 1) % latestImages.length;
-
-  latestInterval = setInterval(() => {
-    latestImage.src = latestImages[latestIndex];
-    latestIndex = (latestIndex + 1) % latestImages.length;
-  }, 1000);
-}
-
-function stopLatestLoop() {
-  clearInterval(latestInterval);
-  latestIndex = 0;
-  latestImage.src = 'images/CD/CD_cover.jpg';
-  latestImage.style.maxHeight = '90%'; // ritorna alla dimensione originale
-}
-
-latestFrame.addEventListener('mouseenter', () => {
-  startLatestLoop();
-});
-
-latestFrame.addEventListener('mouseleave', () => {
-  stopLatestLoop();
-});
-
 // Colonna 3
 const projects = [
   {
     name: "Project 1",
     folder: "project1",
-    caption: "<em>Spoiled Air</em> is a project of visualization of air and its relationship with mental health issues. The installation, designed for an assignment during my MA at DAE, displays a series of quantified information about air volumes, atmospheric composition, breathing mechanisms, and the perception of such in situations of isolation and psychological distress. The information is represented through the metaphoric unit of inflatable origamis, hinting both at the calming practice of breathing in a paper bag, and at the sense of enclosure and missing air that various conditions of psychological struggle can induce. The last bit of information eventually opens as the origami unfolds, inviting to breathe.",
+    caption: "<em>The Bigger Picture</em> is an exploratory diagrammatic installation I designed as a graduation project at DAE. The installation consists of a room-sized flowchart drawn directly onto the exhibition surfaces with invisible ink that can be seen only using a UV-flashlight. Through the game/investigation experience, made of crossroads, choices and hidden elements, I unpack the content of my research on the formal and and theoretical similarities between design and conspiracy theories. The project aims at opening a discussion about the legitimacy of information and the social perception of design and conspiracy theories: two esoteric systems of knowledge in constant need to expand the scope of their research.",
     colorImages: ["1.jpg", "2.jpg", "3.jpg"]
   },
   {
@@ -112,7 +91,7 @@ const projects = [
   {
     name: "Project 3",
     folder: "project3",
-    caption: "<em>The Bigger Picture</em> is an exploratory diagrammatic installation I designed as a graduation project at DAE. The installation consists of a room-sized flowchart drawn directly onto the exhibition surfaces with invisible ink that can be seen only using a UV-flashlight. Through the game/investigation experience, made of crossroads, choices and hidden elements, I unpack the content of my research on the formal and and theoretical similarities between design and conspiracy theories. The project aims at opening a discussion about the legitimacy of information and the social perception of design and conspiracy theories: two esoteric systems of knowledge in constant need to expand the scope of their research.",
+    caption: "<em>Spoiled Air</em> is a project of visualization of air and its relationship with mental health issues. The installation, designed for an assignment during my MA at DAE, displays a series of quantified information about air volumes, atmospheric composition, breathing mechanisms, and the perception of such in situations of isolation and psychological distress. The information is represented through the metaphoric unit of inflatable origamis, hinting both at the calming practice of breathing in a paper bag, and at the sense of enclosure and missing air that various conditions of psychological struggle can induce. The last bit of information eventually opens as the origami unfolds, inviting to breathe.",
     colorImages: ["1.jpg", "2.jpg", "3.jpg"]
   },
 
@@ -127,14 +106,14 @@ const projects = [
     name: "Project 5",
     folder: "project5",
     caption: "<em>Representation Wars</em> is an infographic designed to try to deconstruct the rhetorical function of war depictions inside the Rijksmuseum in Amsterdam. Prompted by an assignment received during my MA to design an hacking intervention within the Rijksmuseum that would counter its act of creation of national identity, I examined room 2.1.5 of the museum, where some of the most important paintings of dutch naval battles are exhibited. I then selected 'The Battle of Leghorn' by Reiner Nooms as a case study and designed an essential infographic to expose the limits the painting as an historical document and show the way it serves as tool of national glorification.",
-    colorImages: ["1.jpg", "2.jpg", "3.jpg"]
+    colorImages: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"]
   },
 
   {
     name: "Project 6",
     folder: "project6",
-    caption: "<em>Cosa scopro quando disegno</em> (What I find out as I draw) is my thesis and graduation project from my BA at ISIA Urbino. It is an inquiry into the processes of learning and unlearning how to draw. As the ability to draw analogically becomes less and less present in designers' practices it keeps on offering a multitude of discoveries and questions, both practical and philosophical, particularly when framed as process-centered activity. Cosa scopro quando disegno is a publication that collects historical cases, interviews, personal reflections, and self-initiated workshops, all centered on exercises that invite to deconstruct our understanding of drawing.",
-    colorImages: ["1.jpg", "2.jpg", "3.jpg"]
+    caption: "<em>Cosa scopro quando disegno</em> (&quotWhat I find out as I draw&quot) is my thesis and graduation project from my BA at ISIA Urbino. It is an inquiry into the processes of learning and unlearning how to draw. As the ability to draw analogically becomes less and less present in designers' practices it keeps on offering a multitude of discoveries and questions, both practical and philosophical, particularly when framed as process-centered activity. Cosa scopro quando disegno is a publication that collects historical cases, interviews, personal reflections, and self-initiated workshops, all centered on exercises that invite to deconstruct our understanding of drawing.",
+    colorImages: ["2.png", "3.png", "4.png", "5.png", "6.png", "7.png"]
   },
   // aggiungi altri progetti
 ];
@@ -154,7 +133,7 @@ function startLoop() {
   loopInterval = setInterval(() => {
     currentIndex = (currentIndex + 1) % projects.length;
     if (!isHovering) showPreview(currentIndex);
-  }, 3500);
+  }, 3000);
 }
 
 function stopLoop() {
@@ -237,15 +216,6 @@ function showPreview(index) {
   updateDots();
 }
 
-// Nascode il footer della colonna 3
-document.getElementById('loop-B').addEventListener('mouseenter', () => {
-  document.getElementById('Portfolio').style.display = 'none';
-});
-
-document.getElementById('loop-B').addEventListener('mouseleave', () => {
-  document.getElementById('Portfolio').style.display = 'block'; // o 'flex', ecc.
-});
-
 
 // Genera slide progetti mobile
 function loadProjects(){
@@ -290,23 +260,17 @@ function loadProjects(){
   }
 }
 
-
-//addEventListener("resize", (event) => {loadProjects()})
-
-
 // Tooltip tracking
 const tooltip = document.getElementById('tooltip');
 const projectframeB = document.getElementsByClassName('project-frame-B')[0];
 projectframeB.addEventListener("mousemove", (e) => {
     const rect = tooltip.getBoundingClientRect();
     const x = e.clientX - (rect.width/2);
-    const y = e.clientY + 10;
+    const y = e.clientY + 20;
 
     tooltip.style.left = `${x}px`;
     tooltip.style.top = `${y}px`;
 });
-
-
 
 // Inizializza
 showPreview(currentIndex);

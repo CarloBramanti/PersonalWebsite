@@ -23,13 +23,13 @@ body {
   display: none !important;
 }
 
-.swiper-pagination-bullet{background-color: white !important; border: 1px solid var(--textColor); opacity: 1 !important;}
-.swiper-pagination-bullet-active{background-color: var(--textColor) !important;}
+.swiper-pagination-bullet{background-color: white !important; border: 1px solid var(--textColor); opacity: 1 !important; position: relative; bottom: 5px}
+.swiper-pagination-bullet-active{background-color: var(--textColor) !important; position: relative; bottom: 5px;}
 
 .project-slide{
   width: 100%;
-  height: calc(100vh - 229px) !important;
-  height: calc(100dvh - 229px) !important;
+  height: calc(100vh - 230px) !important;
+  height: calc(100dvh - 230px) !important;
   overflow: scroll;
   .project-slide-image{
     width: 100%;
@@ -63,6 +63,12 @@ body {
   left: 0;
   z-index: 100;
 } 
+
+.tooltip{
+  font-family: 'adobe-jenson-pro', serif;
+  font-weight: 600; font-style: normal;
+  padding: 5px;
+}
 
 #title-3{
   width: 141px;
@@ -182,7 +188,8 @@ body {
   margin-left: auto;
   /* spinge a destra */
   gap: 10px;
-  margin-left: 50px;
+  margin-left: 25px;
+  margin-top: 13px;
 }
 
 .Call-to-action {
@@ -397,23 +404,31 @@ body {
   padding-top: 10px;
 }
 
+.other-projects-nav{
+  display: flex;
+  justify-content: space-between;
+  vertical-align:baseline;
+}
+
 .gallery-dots {
   display: flex;
   justify-content: right;
   flex-direction: row;
   direction: ltr;
-  gap: 36px;
+  gap: 30px;
   margin-top: 20px;
   margin-right: 40px;
   height: 11px;
 }
 
 .gallery-dots .dot {
-  width: 4px;
-  height: 4px;
-  background-color: var(--textColor);
+  width: 6px;
+  height: 6px;
+  background-color: white;
   border-radius: 50%;
-  transition: all 0.2s ease;
+  border: 1px;
+  border-style: solid;
+  border-color: var(--textColor);
 }
 
 .gallery-dots .dot.active {
@@ -427,6 +442,21 @@ body {
   background-color: black;
   color: white;
   text-shadow: none;
+}
+
+.tap-for-more{
+  font-family: 'Ronzino'; 
+  font-size: 14px;
+  z-index: 800;
+  position: absolute;
+  background-color: white;
+  padding: 5px;
+  right: 0px;
+  border: 3px;
+  border-style: solid;
+  border-color: var(--textColor);
+  border-top: none;
+  border-right: none;
 }
 
 .footer {
