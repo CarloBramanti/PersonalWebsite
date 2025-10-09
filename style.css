@@ -23,8 +23,8 @@ body {
   display: none !important;
 }
 
-.swiper-pagination-bullet{background-color: white !important; border: 1px solid var(--textColor); opacity: 1 !important; position: relative; bottom: 5px}
-.swiper-pagination-bullet-active{background-color: var(--textColor) !important; position: relative; bottom: 5px;}
+.swiper-pagination-bullet{background-color: white !important; border: 1px solid var(--textColor); opacity: 1 !important; position: relative; bottom: 15px}
+.swiper-pagination-bullet-active{background-color: var(--textColor) !important; position: relative; bottom: 15px;}
 
 .project-slide{
   width: 100%;
