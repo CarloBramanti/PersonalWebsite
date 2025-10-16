@@ -442,4 +442,9 @@
   .Portfolio{
     font-size: 14px;
   }
+
+  @media (max-width: 360px) {
+  .Portfolio-mobile {
+    display: none;
+  }
 }

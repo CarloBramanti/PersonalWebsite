@@ -29,7 +29,7 @@ body {
 .project-slide{
   width: 100%;
   height: calc(100vh - 230px) !important;
-  height: calc(100dvh - 230px) !important;
+  height: calc(100dvh - 250px) !important;
   overflow: scroll;
   .project-slide-image{
     width: 100%;
@@ -68,6 +68,10 @@ body {
   font-family: 'adobe-jenson-pro', serif;
   font-weight: 600; font-style: normal;
   padding: 5px;
+}
+
+#navigation-mobile-col1{
+  margin-top: 0px !important;
 }
 
 #title-3{
@@ -259,6 +263,13 @@ body {
   object-position: center;
   pointer-events: none;
   user-select: none;
+}
+
+.loop-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /*COL 1 Elements*/
@@ -550,6 +561,7 @@ input[type="radio"] {
 .navigation-mobile{
   display: flex;
   padding: 20px;
+  margin-bottom: 20px;
 }
 
 .nav-right {
