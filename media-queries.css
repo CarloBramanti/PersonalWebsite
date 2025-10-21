@@ -8,7 +8,7 @@
     display: none;
   }
 
-  .phone-footer{
+  .phone-footer {
     width: 33.33vw;
   }
 
@@ -17,7 +17,7 @@
     display: none;
   }
 
-  .navigation-mobile{
+  .navigation-mobile {
     display: none;
   }
 
@@ -25,22 +25,23 @@
     display: none;
   }
 
-  .navigation-tablet{
+  .navigation-tablet {
     display: none;
   }
 
-  #tap-for-more{
+  #tap-for-more {
     display: none;
   }
 }
 
 @media (max-width: 1350px) {
+
   .caption,
-  .CD-Blurb{
+  .CD-Blurb {
     font-size: 19px;
   }
 
-  #tap-for-more{
+  #tap-for-more {
     display: none;
   }
 }
@@ -52,24 +53,24 @@
     display: inline-block;
   }
 
-  #footer-col2-3{
+  #footer-col2-3 {
     width: 50%;
   }
 
-  .phone-footer{
+  .phone-footer {
     width: 50%;
   }
 
-  #tap-for-more{
+  #tap-for-more {
     display: none;
   }
 
   #title-3-desktop,
-  #title-2-desktop{
+  #title-2-desktop {
     display: none;
   }
 
-.navigation-mobile{
+  .navigation-mobile {
     display: none;
   }
 
@@ -181,59 +182,67 @@
 /* Schermi piccoli: massimo 765px -> 1 colonna */
 @media (max-width: 765px) {
 
-  body{
+  body {
     -webkit-text-stroke: 0.25px;
   }
 
-  .proj-desktop{
+  .proj-desktop {
     display: none;
   }
-  .proj-mobile{
+
+  .proj-mobile {
     display: block !important;
     width: 100%;
   }
 
-  .Portfolio-mobile{
+  .Portfolio-mobile {
     display: unset;
   }
 
-  .phone-footer{
+  .phone-footer {
     width: 100%;
   }
 
-.column,
-.column2,
-.column3 {
-  height: calc(100vh - 93px);
-  max-width: 100%;
-  overflow: scroll;
-}
+  .column,
+  .column2,
+  .column3 {
+    height: calc(100vh - 93px);
+    max-width: 100%;
+    overflow: scroll;
+  }
 
-.line-3{display: none;}
+  .line-3 {
+    display: none;
+  }
 
-#col-3 .top-bar{border-bottom: 3px solid var(--textColor);}
-#title-1{max-width: 40%;}
-  
+  #col-3 .top-bar {
+    border-bottom: 3px solid var(--textColor);
+  }
+
+  #title-1 {
+    max-width: 40%;
+  }
+
 
   .toggle {
     width: initial;
     margin: 0px;
   }
-  
 
-  .project-intro-text{
+
+  .project-intro-text {
     font-size: 12pt;
   }
 
-  #top-bar-col1{
+  #top-bar-col1 {
     height: 2%;
   }
 
-  .navigation-tablet{
+  .navigation-tablet {
     display: none;
   }
 
-  .BIO{
+  .BIO {
     font-size: 24px;
     height: fit-content;
     margin-bottom: 0px;
@@ -243,11 +252,11 @@
     width: initial
   }
 
-  #funny-bio{
+  #funny-bio {
     position: relative;
   }
 
-  .bio-wrapper{
+  .bio-wrapper {
     height: unset;
     padding-bottom: 20px;
   }
@@ -258,7 +267,7 @@
     width: 100vw;
   }
 
-  #title-1-desktop{
+  #title-1-desktop {
     display: none;
   }
 
@@ -266,15 +275,15 @@
     width: 100vw;
   }
 
-  .nav-bar-1{
+  .nav-bar-1 {
     display: flex;
     margin-right: 20px;
     justify-content: space-between;
   }
 
-  #navigation-mobile-col1{
-  padding-bottom: 45px;
-}
+  #navigation-mobile-col1 {
+    padding-bottom: 45px;
+  }
 
   .column-title,
   .page-title:hover {
@@ -287,12 +296,12 @@
     justify-content: space-between;
   }
 
-  .space-between{
+  .space-between {
     display: flex !important;
     flex: 1;
   }
 
-  .navigation-mobile{
+  .navigation-mobile {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -398,16 +407,17 @@
 }
 
 @media (max-width: 550px) {
+
   .project-frame,
   .project-frame-B {
     height: 25vh;
   }
 
-  .gallery-arrows{
+  .gallery-arrows {
     display: none;
   }
 
-  #tap-for-more{
+  #tap-for-more {
     display: flex;
   }
 }
@@ -415,35 +425,39 @@
 @media (max-width: 440px) {
 
   .nav-right {
-    flex-direction: column;      /* mette uno sopra l’altro */
-    align-items: flex-end;       /* allinea a destra */
+    flex-direction: column;
+    /* mette uno sopra l’altro */
+    align-items: flex-end;
+    /* allinea a destra */
     padding-right: 10px;
     gap: 8px;
   }
 
-  #navigation-mobile-col1{
-  padding-bottom: 20px;
-}
-
-  .nav-right .slash {
-    display: none;               /* sparisce lo slash */
+  #navigation-mobile-col1 {
+    padding-bottom: 20px;
   }
 
-  .navigation-mobile{
+  .nav-right .slash {
+    display: none;
+    /* sparisce lo slash */
+  }
+
+  .navigation-mobile {
     align-items: flex-start;
   }
 
-  .top-bar{
+  .top-bar {
     height: 50px;
   }
 }
 
 @media (max-width: 440px) {
-  .Portfolio{
+  .Portfolio {
     font-size: 14px;
   }
+}
 
-  @media (max-width: 360px) {
+@media (max-width: 360px) {
   .Portfolio-mobile {
     display: none;
   }
