@@ -1,143 +1,191 @@
 <!DOCTYPE html>
 <html>
-    <!-- to programmers out there: I wrote this myself without chatGPT, be kind :)-->
-    <head>
-        <meta charset="UTF-8">
-        <title>Carlo Bramanti</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="media-queries.css">
-        <link rel="stylesheet" href="https://use.typekit.net/jru0sxb.css">
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlo Bramanti</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media-queries.css">
+    <link rel="stylesheet" href="https://use.typekit.net/jru0sxb.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="icon" type="image/png" href="/favicon.png"/>
+</head>
+
+<body onload="setTheme()">
+    <input type="radio" id="show-col-1" name="columns" checked>
+    <input type="radio" id="show-col-2" name="columns">
+    <input type="radio" id="show-col-3" name="columns">
+
+    <!-- LAYOUT WRAPPER -->
+    <div class="layout">
         <div class="line line-1"></div>
         <div class="line line-2"></div>
         <div class="line line-3"></div>
-        
+
+        <!-- COLUMN 1 -->
         <div class="column" id="col-1">
-            <div class="page-title">CARLO BRAMANTI</div>
-            <div class="BIO">
-            I’m a visual designer and writer based in The Netherlands. 
-            I hold an <a id="Link" href="https://www.designacademy.nl/page/5827/information-design" target="_blank">MA</a> in Information Design at Design Academy Eindhoven 
-            and a <a id="Link" href="https://isiaurbino.net/" target="_blank">BA</a> in Graphic Design at ISIA U. I love researching design culture, 
-            visual studies and their relationship with politics and communities.
+
+            <label for="show-col-1" class="toggle page-title carlo" id="title-1-desktop">Carlo Bramanti</label>
+
+
+            <div class="navigation-mobile" id="navigation-mobile-col1">
+                <label for="show-col-1" class="toggle page-title" id="title-1">Carlo Bramanti</label>
+
+                <div class="nav-right">
+                    <label for="show-col-2" class="toggle column-title" id="title-2">Latest</label>
+                    <div class="slash">&nbsp;/&nbsp;</div>
+                    <label for="show-col-3" class="toggle column-title" id="title-3">Other Projects</label>
+                </div>
+
             </div>
-            
-            <div class="Alt-BIO">Not satisfied with this description?<br>Who is Carlo Bramanti…<span id="trigger-really" style="color: red; cursor: pointer; text-decoration: underline;">really</span>?</div>
-            
-            <img src="arrow-down.svg" style="height: 30px; padding-top: 10px; margin-left: 20px;">
-            
+
+            <div class="top-bar" id="top-bar-col1">
+            </div>
+
+            <div class="BIO">
+                I’m a visual designer and writer based in The Netherlands.
+                I hold an <a class="Link" href="https://www.designacademy.nl/page/5827/information-design"
+                    target="_blank">MA</a> in Information Design at Design Academy Eindhoven
+                and a <a class="Link" href="https://isiaurbino.net/" target="_blank">BA</a> in Graphic Design at ISIA U.
+                I love researching design culture,
+                visual studies and their relationship with politics and communities.
+            </div>
+
+            <div class="Alt-BIO">Not satisfied with this description?<br>Who is Carlo Bramanti…<span id="trigger-really"
+                    style="color: var(--textColor); cursor: pointer; text-decoration: underline;">really</span>?</div>
+
+            <img id="arrow-down" src="arrow-down-red.svg" style="height: 30px; padding-top: 10px; margin-left: 20px;">
+
             <div class="bio-wrapper">
                 <div id="funny-bio">…</div>
-            
-                
             </div>
 
-            <div id="footer-col2&3" class="footer">
-                
-                <div class="Contact" style="padding-bottom: 2px; margin-left: 60px;">Get in touch</div>
-                
-                <div style="display: flex; flex-direction: row;">
-                    <img src="arrow-right.svg" style="height: 20px; padding-top: 10px; margin-left: 20px;">
-                    <div class="Contact" style="padding-top: 7px; margin-left: 10px; text-decoration: underline">carlo.bramanti98@gmail.com</div>
-                </div>
+        </div>
 
-                <div style="display: flex; flex-direction: row;">
-                    <img src="arrow-right.svg" style="height: 20px; padding-top: 10px; margin-left: 20px;">
-                    <a class="Contact" id="Link" href="https://www.instagram.com/carlo_bramanti_/" target="_blank" style="padding-top: 7px; margin-left: 10px; text-decoration: underline;">Instagram</a>
+        <!-- COLUMN 2 -->
+        <div class="column2" id="col-2">
+
+            <label for="show-col-2" class="toggle column-title" id="title-2-desktop">Latest</label>
+
+            <div class="navigation-tablet">
+                <label style="text-decoration: underline;" for="show-col-2" id="title-2">LATEST</label>
+                <div>/</div>
+                <label class="Link" for="show-col-3" id="title-3">OTHER PROJECTS</label>
+            </div>
+
+            <div class="navigation-mobile">
+                <label for="show-col-1" class="toggle page-title" id="title-1">Carlo Bramanti</label>
+
+                <div class="nav-right">
+                    <label style="text-decoration: underline;" for="show-col-2" class="toggle column-title"
+                        id="title-2">Latest</label>
+                    <div class="slash">&nbsp;/&nbsp;</div>
+                    <label for="show-col-3" class="toggle column-title" id="title-3">Other Projects</label>
                 </div>
 
             </div>
-            
+
+            <div class="top-bar">
+                <div class="Call-to-action">My book <em>Conspiratorial Design</em><br>is out now for Set Margins'. Get
+                    it <a class="Link" href="https://www.setmargins.press/books/conspiratorial-design/"
+                        target="_blank">here</a></div>
+            </div>
+            <a class="project-frame" style="color: var(--textColor);" href="https://www.setmargins.press/books/conspiratorial-design/" target="_blank" id="latest-frame">
+                <img id="latest-image" src="images/CD/1.gif" alt="Latest Project" />
+            </a>
+            <div style="margin: 20px;">
+                <div class="CD-Title">CONSPIRATORIAL DESIGN</div>
+                <div class="CD-Blurb">“Design is generally perceived as something that simplifies
+                    and targets the essence of things; something that should say
+                    the Truth. Conspiracy theories instead are far-fetched and create
+                    confusion. Design is expected to be able to bypass false rhetorics
+                    because its very premise is to deal with how things work in reality.
+                    However, what is argued in this book is that design and conspiracy
+                    theories mirror each other. They act with similar goals and they adopt
+                    comparable representations. They intersect in their practices and in
+                    their artifacts because they share a common ground at their fundaments.
+                    This common ground is <em>Conspiratorial Design.</em>”</div>
+            </div>
             <div class="hor-line"></div>
         </div>
-        
 
-        <div class="column2" id="col-2">
-                <div class="top-bar">
+        <!-- COLUMN 3 -->
+        <div class="column3" id="col-3">
 
-                    <div class="nav-bar" id="nav-bar-2">
-                        <div class="column-title nav-item" id="LATEST" style="text-decoration: underline;">LATEST</div>
-                        <div class="column-title" id="OTHER-PROJECTS-2col">OTHER PROJECTS</div>
-                    </div>
+            <label for="show-col-3" class="toggle column-title" id="title-3-desktop">Other Projects</label>
 
-                        <div class="column-title nav-item" id="LATEST-3col">LATEST</div>
-                    
-                    <div class="Call-to-action">My book <em>Conspiratorial Design</em><br>is out now for Set Margins'. Get it  <a id="Link" href="https://www.setmargins.press/books/conspiratorial-design/" target="_blank">here</a></div>
-                
-                </div>
-               
-                <div class="project-frame" id="latest-frame">
-                    <img id="latest-image" src="images/CD_cover.jpg" alt="Latest Project" />
-                </div>
+            <div class="navigation-tablet">
+                <label class="Link" for="show-col-2" id="title-2">LATEST</label>
+                <div>/</div>
+                <label style="text-decoration: underline;" for="show-col-3" id="title-3">OTHER PROJECTS</label>
+            </div>
 
-                <div style="margin: 20px;">
-                    <div style="font-family: 'Untitled'; font-weight: 500; font-size: 11pt; line-height: 1; color: red;">CONSPIRATORIAL DESIGN</div>
-                    <div class="CD-Blurb">“Design is generally perceived as something that simplifies 
-                        and targets the essence of things; something that should say
-                        the Truth. Conspiracy theories instead are far-fetched and create 
-                        confusion. Design is expected to be able to bypass false rhetorics 
-                        because its very premise is to deal with how things work in reality. 
-                        However, what is argued in this book is that design and conspiracy 
-                        theories mirror each other. They act with similar goals and they adopt 
-                        comparable representations. They intersect in their practices and in 
-                        their artifacts because they share a common ground at their fundaments. 
-                        This common ground is <em>Conspiratorial Design.</em>”</div>
+            <div class="navigation-mobile">
+                <label for="show-col-1" class="toggle page-title" id="title-1">Carlo Bramanti</label>
+
+                <div class="nav-right">
+                    <label for="show-col-2" class="toggle column-title" id="title-2">Latest</label>
+                    <div class="slash">&nbsp;/&nbsp;</div>
+                    <label style="text-decoration: underline;" for="show-col-3" class="toggle column-title"
+                        id="title-3">Other Projects</label>
                 </div>
 
-                <div class="hor-line"></div>
-        </div>
-
-         <div class="column3" id="col-3">
+            </div>
             <div class="top-bar">
-
-                <div class="nav-bar" id="nav-bar-3">
-                    <div class="column-title nav-item" id="LATEST-2col">LATEST</div>
-                    <div class="column-title" style="text-decoration: underline;">OTHER PROJECTS</div>
-                </div>
-
-                <div class="column-title" id="OTHER-PROJECTS-3col">OTHER PROJECTS</div>
-
                 <div class="project-intro-bar">
-                    <div class="project-intro-text">A small selection of projects I worked on.</div>
-                    <div class="gallery-arrows">
-                        <img id="arrow-left" src="arrow-left.svg" style="height: 16px; margin-right: 10px">
-                        <img id="arrow-right" src="arrow-right.svg" style="height: 16px; margin-right: 10px; position: relative;">
-                    </div>
+                    <div class="project-intro-text">A small selection <br>of projects I worked on.</div>
                 </div>
             </div>
 
-            <div class="project-frame-B">
-                <div class="image-loop" id="loop-B"></div>
-            </div>
-                
-            <div class="caption-wrapper">
-                <div class="caption" id="caption-B"></div>
-            </div>
+            <section class="proj-desktop">
+                <div class="project-frame-B">
+                    <span id="tooltip" class="tooltip"> click for more </span>
+                    <div class="image-loop" id="loop-B"></div>
+                    
+                </div>
 
+                <div class="other-projects-nav">
+                <div class="gallery-arrows">
+                        <img id="arrow-left" src="arrow-left-red.svg" style="height: 16px; margin-right: 10px">
+                        <img id="arrow-right" src="arrow-right-red.svg"
+                            style="height: 16px; margin-right: 10px; position: relative;">
+                    </div>
+                    <div class="gallery-dots" id="gallery-dots-B"></div>
+                </div>
+
+                <div class="caption-wrapper">
+                    <div class="caption" id="caption-B"></div>
+                </div>
+            </section>
+            <section class="swiper proj-mobile">
+                <div id="tap-for-more" class="tap-for-more">tap for more</div>
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+            </section>
             <div class="footer3" id="Portfolio">Portfolio available upon request</div>
         </div>
+    </div>
 
-        <div class="phone-footer">
-
-             <div>
-                <div class="Contact" style="padding-bottom: 2px; margin-left: 60px;">Get in touch</div>
-                <div style="display: flex; flex-direction: row;">
-                    <img src="arrow-right.svg" style="height: 20px; padding-top: 10px; margin-left: 20px;">
-                    <div class="Contact" style="padding-top: 7px; margin-left: 10px; text-decoration: underline">carlo.bramanti98@gmail.com</div>
-                </div>
-
-                <div style="display: flex; flex-direction: row;">
-                    <img src="arrow-right.svg" style="height: 20px; padding-top: 10px; margin-left: 20px;">
-                    <a class="Contact" id="Link" href="https://www.instagram.com/carlo_bramanti_/" target="_blank" style="padding-top: 7px; margin-left: 10px; text-decoration: underline;">Instagram</a>
-                </div>
-            </div>  
-
-            <div class="Contact">Portfolio available upon request</div>
+    <div class="phone-footer">
+        <div>
+            <div class="Get-in-touch" style="margin-left: 10px; font-size: 9pt;">GET IN TOUCH</div>
+            <div style="display: flex; flex-direction: row;">
+                <div class="Contact" style="padding-top: 4px; margin-left: 10px; text-decoration: underline">
+                    carlo.bramanti98@gmail.com</div>
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                <a class="Link" href="https://www.instagram.com/carlo_bramanti_/" target="_blank"
+                    style="font-family: 'Ronzino'; padding-top: 7px; margin-left: 10px; text-decoration: underline;">Instagram</a>
+            </div>
         </div>
+        <div class="Portfolio Portfolio-mobile">Portfolio available upon request</div>
+    </div>
 
-        <script src="loop.js">
-        </script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    </body>
+    <script src="loop.js"></script>
+</body>
+
 </html>
