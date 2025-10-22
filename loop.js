@@ -1,12 +1,3 @@
-// Swiper initialisation
-var swiper = new Swiper(".proj-mobile", {
-  loop: false,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true
-  },
-});
-
 // Colonna 1 Reroll BIO
 const trigger = document.getElementById('trigger-really');
 const funnyBio = document.getElementById('funny-bio');
@@ -80,7 +71,7 @@ const projects = [
     name: "Project 1",
     folder: "project1",
     caption: "<em>The Bigger Picture</em> is an exploratory diagrammatic installation I designed as a graduation project at DAE. The installation consists of a room-sized flowchart drawn directly onto the exhibition surfaces with invisible ink that can be seen only using a UV-flashlight. Through the game/investigation experience, made of crossroads, choices and hidden elements, I unpack the content of my research on the formal and and theoretical similarities between design and conspiracy theories. The project aims at opening a discussion about the legitimacy of information and the social perception of design and conspiracy theories: two esoteric systems of knowledge in constant need to expand the scope of their research.",
-    colorImages: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
+    colorImages: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"]
   },
   {
     name: "Project 2",
@@ -92,21 +83,21 @@ const projects = [
     name: "Project 3",
     folder: "project3",
     caption: "<em>Spoiled Air</em> is a project of visualization of air and its relationship with mental health issues. The installation, designed for an assignment during my MA at DAE, displays a series of quantified information about air volumes, atmospheric composition, breathing mechanisms, and the perception of such in situations of isolation and psychological distress. The information is represented through the metaphoric unit of inflatable origamis, hinting both at the calming practice of breathing in a paper bag, and at the sense of enclosure and missing air that various conditions of psychological struggle can induce. The last bit of information eventually opens as the origami unfolds, inviting to breathe.",
-    colorImages: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "1.mp4",]
+    colorImages: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "1.mp4"]
   },
 
   {
     name: "Project 4",
     folder: "project4",
     caption: "In 2023 I designed the visual identity for <em>Backward Steps</em>, an independent musical project of producer and beat-maker Ha-Maze. Together with the artist we defined the core aspects of the project that needed to be conveyed and we imagined how to translate such sensations and ideas through visual metaphors. The lo-fi, broken, and glitchy urban sounds were represented by juxtaposing photographs and videos with a residual, dreamlike appearance with animated ASCII art. The ASCII typographic visuals were obtained using a P5js script (based on the work of Andreas Gysin) that maps and converts the brightness of the pixels in a video into a list of glyphs.",
-    colorImages: ["1.jpg", "2.gif", "3.gif", "4.gif", "5.jpg"]
+    colorImages: ["1.jpg", "2.mp4", "3.mp4", "4.mp4", "5.jpg"]
   },
 
   {
     name: "Project 5",
     folder: "project5",
     caption: "<em>Representation Wars</em> is an infographic designed to try to deconstruct the rhetorical function of war depictions inside the Rijksmuseum in Amsterdam. Prompted by an assignment received during my MA to design an hacking intervention within the Rijksmuseum that would counter its act of creation of national identity, I examined room 2.1.5 of the museum, where some of the most important paintings of dutch naval battles are exhibited. I then selected 'The Battle of Leghorn' by Reiner Nooms as a case study and designed an essential infographic to expose the limits the painting as an historical document and show the way it serves as tool of national glorification.",
-    colorImages: ["1.jpg", "1.gif", "1.png", "2.png", "3.jpg", "4.png"]
+    colorImages: ["1.jpg", "1.mp4", "1.png", "2.png", "3.png", "4.png"]
   },
 
   {
@@ -295,3 +286,12 @@ startLoop();
 createDots();
 updateDots();
 loadProjects();
+
+// Swiper initialisation
+var swiper = new Swiper(".proj-mobile", {
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+  },
+});
