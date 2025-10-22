@@ -1,11 +1,10 @@
-// Colonna 1 Reroll BIO
+// Column 1 Reroll BIO
 const trigger = document.getElementById('trigger-really');
 const funnyBio = document.getElementById('funny-bio');
 
 const textColors = ['red', 'blue'];
 
 const bioOptions = [
-  "He does messy drawings to make his brain shut down.",
   "He hates writing bios where he speaks in third person of himself.",
   "His 4 favorites on Letterboxd are: John Wick, John Wick 2, John Wick 3, and John Wick 4.",
   "He likes, among others, the following video games: Return of the Obra Dinn, Hollow Knight, Kentucky Route Zero, Pokémon Crystal, The Binding of Isaac, Disco Elysium.",
@@ -15,8 +14,8 @@ const bioOptions = [
   "He is the Referendary of the Order of the Rosicrucians in Europe, Secret Knight of the Grand Priory In Patribus of Rhodes, Malta and Thessaloniki."
 ];
 
-const spinSpeed = 35; // velocità in millisecondi per ogni frame
-const spinDuration = 1100; // durata totale in millisecondi
+const spinSpeed = 35; // millisecond speed for each frame
+const spinDuration = 1100; // total duration of the spin
 const mobileSize = window.matchMedia("(max-width: 765px)");
 
 function getRandomIntInclusive(min, max) {
@@ -32,7 +31,7 @@ trigger.addEventListener('click', () => {
 
   setTimeout(() => {
     clearInterval(interval);
-    // Fissa la bio finale casuale
+    // Set last random bio
     funnyBio.innerHTML = bioOptions[Math.floor(Math.random() * bioOptions.length)];
   }, spinDuration);
 });
@@ -44,7 +43,7 @@ funnyBio.addEventListener('click', () => {
 
   setTimeout(() => {
     clearInterval(interval);
-    // Fissa la bio finale casuale
+    // Set last random bio
     funnyBio.innerHTML = bioOptions[Math.floor(Math.random() * bioOptions.length)];
   }, spinDuration);
 });
@@ -106,7 +105,7 @@ const projects = [
     caption: "<em>Cosa scopro quando disegno</em> (&quotWhat I find out as I draw&quot) is my thesis and graduation project from my BA at ISIA Urbino. It is an inquiry into the processes of learning and unlearning how to draw. As the ability to draw analogically becomes less and less present in designers' practices it keeps on offering a multitude of discoveries and questions, both practical and philosophical, particularly when framed as process-centered activity. Cosa scopro quando disegno is a publication that collects historical cases, interviews, personal reflections, and self-initiated workshops, all centered on exercises that invite to deconstruct our understanding of drawing.",
     colorImages: ["2.png", "3.png", "4.png", "5.png", "6.png", "7.png"]
   },
-  // aggiungi altri progetti
+  // add more projects here
 ];
 
 const dotsContainer = document.getElementById("gallery-dots-B");
@@ -140,14 +139,14 @@ function showColorVersion(index) {
   let mediaElement = "";
 
   if (["mp4", "webm"].includes(extension)) {
-    // Se è un video
+    // If it's a video
     mediaElement = `
       <video class="loop-video" autoplay loop muted playsinline>
         <source src="${filePath}" type="video/${extension}">
       </video>
     `;
   } else {
-    // Se è un’immagine
+    // If it's an image
     mediaElement = `<img src="${filePath}" class="loop-image" />`;
   }
 
@@ -188,7 +187,7 @@ rightArrow.addEventListener("click", () => {
   if (!isHovering) goToIndex(currentIndex + 1);
 });
 
-//Pallini di navigazione progetti
+//Navigation dots for projects
 function createDots() {
   dotsContainer.innerHTML = "";
   projects.forEach((_, i) => {
@@ -225,7 +224,7 @@ function showPreview(index) {
 }
 
 
-// Genera slide progetti mobile
+// Generates slide for projects on mobile
 function loadProjects(){
   if (mobileSize.matches){
     let wrapper = document.getElementsByClassName('swiper-wrapper')[0];
@@ -280,7 +279,7 @@ projectframeB.addEventListener("mousemove", (e) => {
     tooltip.style.top = `${y}px`;
 });
 
-// Inizializza
+// Initialize
 showPreview(currentIndex);
 startLoop();
 createDots();
