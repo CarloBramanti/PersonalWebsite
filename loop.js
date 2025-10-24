@@ -139,20 +139,31 @@ function showColorVersion(index) {
   let mediaElement = "";
 
   if (["mp4", "webm"].includes(extension)) {
-    // If it's a video
+    // Se è un video
     mediaElement = `
-      <video class="loop-video" autoplay loop muted playsinline>
+      <video class="loop-video" autoplay muted playsinline loop>
         <source src="${filePath}" type="video/${extension}">
       </video>
     `;
   } else {
-    // If it's an image
+    // Se è un’immagine
     mediaElement = `<img src="${filePath}" class="loop-image" />`;
   }
 
   loopContainer.innerHTML = mediaElement;
   captionEl.innerHTML = project.caption;
   captionEl.style.display = "block";
+
+  // Forza il video a partire quando il DOM è pronto
+  const video = loopContainer.querySelector('video');
+  if (video) {
+    video.load();
+    video.play().catch(() => {
+      // fallback se il browser blocca autoplay
+      video.muted = true;
+      video.play().catch(() => {});
+    });
+  }
 }
 
 loopContainer.addEventListener("mouseenter", () => {
@@ -225,29 +236,36 @@ function showPreview(index) {
 
 
 // Generates slide for projects on mobile
-function loadProjects(){
-  if (mobileSize.matches){
+function loadProjects() {
+  if (mobileSize.matches) {
     let wrapper = document.getElementsByClassName('swiper-wrapper')[0];
 
-    for (proj of projects){
-      let projectIndex = projects.indexOf(proj);
-
+    projects.forEach((proj, projectIndex) => {
       let slide = document.createElement('div');
       slide.classList.add('project-slide', 'swiper-slide');
 
-      // Image
+      // Wrapper media
+      let mediaWrapper = document.createElement('div');
+      mediaWrapper.classList.add('project-slide-image');
 
-      let imageWrapper = document.createElement('div');
-      imageWrapper.classList.add('project-slide-image');
-      let image = document.createElement('img');
-      image.src = `images/${proj.folder}/${proj.colorImages[0]}`;
-      imageWrapper.append(image);
-      image.addEventListener("click", () => {
-        let p = projects[projectIndex];
-        colorIndex++;
-        image.src = `images/${p.folder}/${p.colorImages[colorIndex % p.colorImages.length]}`;
-      });
-      
+      // Primo media: sempre il primo file del progetto
+      let mediaEl;
+      const firstFile = proj.colorImages[0];
+      const ext = firstFile.split('.').pop().toLowerCase();
+
+      if (["mp4", "webm"].includes(ext)) {
+        mediaEl = document.createElement('video');
+        mediaEl.src = `images/${proj.folder}/${firstFile}`;
+        mediaEl.autoplay = true;
+        mediaEl.muted = true;
+        mediaEl.loop = true;
+        mediaEl.playsInline = true;
+      } else {
+        mediaEl = document.createElement('img');
+        mediaEl.src = `images/${proj.folder}/${firstFile}`;
+      }
+
+      mediaWrapper.append(mediaEl);
 
       // Caption
       let captionWrapper = document.createElement('div');
@@ -256,16 +274,40 @@ function loadProjects(){
       caption.classList.add('caption');
       caption.innerHTML = proj.caption;
       captionWrapper.append(caption);
-      
-      
-      slide.append(imageWrapper);
+
+      // Aggiunge tutto alla slide
+      slide.append(mediaWrapper);
       slide.append(captionWrapper);
       wrapper.append(slide);
 
+      // Click listener per ciclare media
+      let colorIndex = 0;
+      mediaEl.addEventListener("click", function cycleMedia() {
+        colorIndex++;
+        const nextFile = proj.colorImages[colorIndex % proj.colorImages.length];
+        const nextExt = nextFile.split('.').pop().toLowerCase();
 
-    }
+        let newEl;
+        if (["mp4", "webm"].includes(nextExt)) {
+          newEl = document.createElement('video');
+          newEl.src = `images/${proj.folder}/${nextFile}`;
+          newEl.autoplay = true;
+          newEl.muted = true;
+          newEl.loop = true;
+          newEl.playsInline = true;
+        } else {
+          newEl = document.createElement('img');
+          newEl.src = `images/${proj.folder}/${nextFile}`;
+        }
+
+        mediaEl.replaceWith(newEl);
+        mediaEl = newEl;
+        mediaEl.addEventListener("click", cycleMedia); // Riattacca listener
+      });
+    });
   }
 }
+
 
 // Tooltip tracking
 const tooltip = document.getElementById('tooltip');
@@ -294,3 +336,13 @@ var swiper = new Swiper(".proj-mobile", {
     clickable: true
   },
 });
+
+// Osserva cambi di dimensione del container per forzare autoplay su mobile/desktop small
+const ro = new ResizeObserver(() => {
+  const video = loopContainer.querySelector('video');
+  if (video && loopContainer.offsetWidth > 0 && loopContainer.offsetHeight > 0) {
+    video.load();
+    video.play().catch(() => {});
+  }
+});
+ro.observe(loopContainer);
