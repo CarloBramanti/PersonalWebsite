@@ -4,6 +4,13 @@
   --space: 20px;
 }
 
+html, body{
+  height: auto;
+  overflow-y: auto;
+  min-height: 100%;
+   -webkit-overflow-scrolling: touch;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -46,7 +53,6 @@ body {
 .column3 {
   width: 33.333vw;
   float: left;
-  padding-bottom: 20px;
   overflow: scroll;
   
 }

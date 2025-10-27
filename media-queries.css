@@ -201,6 +201,8 @@
 
   .phone-footer {
     width: 100%;
+    position: relative;
+    bottom: auto;
   }
 
   .column,
