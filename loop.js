@@ -161,7 +161,7 @@ function showColorVersion(index) {
     video.play().catch(() => {
       // fallback se il browser blocca autoplay
       video.muted = true;
-      video.play().catch(() => {});
+      video.play().catch(() => { });
     });
   }
 }
@@ -215,11 +215,11 @@ function createDots() {
 }
 
 function goToIndex(index) {
-      currentIndex = (index + projects.length) % projects.length;
-      showPreview(currentIndex);
-      stopLoop();
-      startLoop();
-    }
+  currentIndex = (index + projects.length) % projects.length;
+  showPreview(currentIndex);
+  stopLoop();
+  startLoop();
+}
 
 function updateDots() {
   const dots = dotsContainer.querySelectorAll(".dot");
@@ -243,6 +243,12 @@ function loadProjects() {
     projects.forEach((proj, projectIndex) => {
       let slide = document.createElement('div');
       slide.classList.add('project-slide', 'swiper-slide');
+
+      // inside your loadProjects() when creating each slide:
+      let badge = document.createElement('div');
+      badge.className = 'tap-for-more';
+      badge.textContent = 'tap for more';
+      slide.appendChild(badge); // slide è la .swiper-slide
 
       // Wrapper media
       let mediaWrapper = document.createElement('div');
@@ -313,12 +319,12 @@ function loadProjects() {
 const tooltip = document.getElementById('tooltip');
 const projectframeB = document.getElementsByClassName('project-frame-B')[0];
 projectframeB.addEventListener("mousemove", (e) => {
-    const rect = tooltip.getBoundingClientRect();
-    const x = e.clientX - (rect.width/2);
-    const y = e.clientY + 20;
+  const rect = tooltip.getBoundingClientRect();
+  const x = e.clientX - (rect.width / 2);
+  const y = e.clientY + 20;
 
-    tooltip.style.left = `${x}px`;
-    tooltip.style.top = `${y}px`;
+  tooltip.style.left = `${x}px`;
+  tooltip.style.top = `${y}px`;
 });
 
 // Initialize
@@ -342,7 +348,7 @@ const ro = new ResizeObserver(() => {
   const video = loopContainer.querySelector('video');
   if (video && loopContainer.offsetWidth > 0 && loopContainer.offsetHeight > 0) {
     video.load();
-    video.play().catch(() => {});
+    video.play().catch(() => { });
   }
 });
 ro.observe(loopContainer);

@@ -456,21 +456,27 @@ body {
   text-shadow: none;
 }
 
-.tap-for-more{
-  font-family: 'Ronzino'; 
-  font-size: 14px;
-  z-index: 800;
-  position: absolute;
-  background-color: white;
-  padding: 5px;
-  right: 0px;
-  border: 3px;
-  border-style: solid;
-  border-color: var(--textColor);
-  border-top: none;
-  border-right: none;
+/* il contenitore di riferimento deve essere posizionato */
+.project-frame-B,
+.swiper-slide {      /* includi .swiper-slide se badge è dentro ogni slide */
+  position: relative;
 }
 
+/* badge ancorato in alto a destra della finestra progetto */
+.tap-for-more {
+  position: absolute;   /* fondamentale: relativo al .project-frame-B o .swiper-slide */
+  top: 0px;
+  right: 0px;
+  z-index: 1000;
+  font-family: 'Ronzino';
+  font-size: 13px;
+  background: white;
+  padding: 6px 8px;
+  border: 3px solid var(--textColor);
+  border-top: none;
+  border-right: none;
+  pointer-events: auto;
+}
 .footer {
   margin-top: 20px;
   padding-top: 20px;
@@ -481,7 +487,7 @@ body {
   justify-content: space-between;
   align-items: flex-end;
   height: 70px;
-  position: relative;
+  position: absolute;
   bottom: 0;
   background-color: white;
   width: 100%;

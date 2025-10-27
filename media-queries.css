@@ -318,6 +318,7 @@
   .CD-Blurb {
     font-size: 14pt;
     line-height: 1.15;
+    padding-bottom: 20px;
   }
 
   .line-1,
@@ -353,6 +354,7 @@
   .caption {
     font-size: 14pt;
     line-height: 1.15;
+    padding-bottom: 20px;
   }
 
   .footer3 {
